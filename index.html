@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV_NguyenTuanAnh_AI_Engineer</title>
+    <title>CV_NguyenTuanAnh_Landscape</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,29 +32,30 @@
         }
     </script>
     <style>
-        /* A4 Size Setup */
+        /* A4 Landscape Size Setup */
         @page {
-            size: A4;
+            size: A4 landscape;
             margin: 0;
         }
         body {
-            background: #f3f4f6; /* Gray background outside paper */
+            background: #f3f4f6;
         }
-        .a4-page {
-            width: 210mm;
-            min-height: 297mm;
+        .a4-page-landscape {
+            width: 297mm; /* Chiều rộng A4 ngang */
+            min-height: 210mm; /* Chiều cao A4 ngang */
             background: white;
             margin: 40px auto;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
+            box-sizing: border-box;
         }
         @media print {
             body { background: white; }
-            .a4-page { 
+            .a4-page-landscape { 
                 width: 100%; 
                 margin: 0; 
                 box-shadow: none; 
-                min-height: auto;
+                min-height: 100vh;
             }
             .no-print { display: none; }
         }
@@ -71,28 +72,28 @@
         </button>
     </div>
 
-    <div class="a4-page p-10 flex flex-col gap-8">
+    <div class="a4-page-landscape p-10 flex flex-col gap-6">
         
-        <header class="flex justify-between items-start border-b-2 border-gray-100 pb-8">
+        <header class="flex justify-between items-center border-b-2 border-gray-100 pb-6">
             <div>
                 <h1 class="text-5xl font-extrabold text-brand-dark tracking-tight">
                     NGUYEN TUAN <span class="text-brand-orange">ANH</span>
                 </h1>
-                <h2 class="text-xl font-mono text-gray-500 mt-2 font-semibold">
+                <h2 class="text-xl font-mono text-gray-500 mt-1 font-semibold">
                     <span class="text-brand-orange">&lt;/&gt;</span> AI Researcher & Engineer
                 </h2>
             </div>
-            <div class="text-right text-sm space-y-2 font-medium text-gray-600">
-                <p><a href="mailto:tranvantrongghgvnb@gmail.com" class="hover:text-brand-orange transition">AnhNT.B23CN039@stu.ptit.edu.vn</a> <i class="fas fa-envelope ml-2 text-brand-orange"></i></p>
-                <p>090 6238 615 <i class="fas fa-phone ml-2 text-brand-orange"></i></p>
-                <p>Hanoi, Vietnam <i class="fas fa-map-marker-alt ml-2 text-brand-orange"></i></p>
-                <p><a href="https://github.com/changaihieuvetinhyeu" class="hover:text-brand-orange transition">github.com/changaihieuvetinhyeu</a> <i class="fab fa-github ml-2 text-brand-orange"></i></p>
+            <div class="text-right text-sm font-medium text-gray-600 grid grid-cols-2 gap-x-8 gap-y-1">
+                <p><a href="mailto:AnhNT.B23CN039@stu.ptit.edu.vn" class="hover:text-brand-orange transition">AnhNT.B23CN039@stu.ptit.edu.vn</a> <i class="fas fa-envelope ml-2 text-brand-orange w-4"></i></p>
+                <p>090 6238 615 <i class="fas fa-phone ml-2 text-brand-orange w-4"></i></p>
+                <p><a href="https://github.com/changaihieuvetinhyeu" class="hover:text-brand-orange transition">github.com/changaihieuvetinhyeu</a> <i class="fab fa-github ml-2 text-brand-orange w-4"></i></p>
+                <p>Hanoi, Vietnam <i class="fas fa-map-marker-alt ml-2 text-brand-orange w-4"></i></p>
             </div>
         </header>
 
-        <div class="flex gap-10 h-full">
+        <div class="grid grid-cols-12 gap-10 h-full">
             
-            <div class="w-2/3 space-y-8">
+            <div class="col-span-8 space-y-6">
                 
                 <section>
                     <div class="bg-brand-code rounded-lg p-4 shadow-lg border border-gray-800 relative group overflow-hidden">
@@ -104,31 +105,33 @@
                         <pre class="font-mono text-xs text-gray-300 whitespace-pre-wrap"><span class="text-purple-400">class</span> <span class="text-yellow-400">Candidate</span>:
     <span class="text-purple-400">def</span> <span class="text-blue-400">__init__</span>(self):
         self.role = <span class="text-green-400">"AI Research Assistant"</span>
-        self.passion = [<span class="text-green-400">"Reinforcement Learning"</span>, <span class="text-green-400">"GenAI"</span>]
+        self.passion = [<span class="text-green-400">"Reinforcement Learning"</span>, <span class="text-green-400">"GenAI"</span>, <span class="text-green-400">"Automation"</span>]
         
     <span class="text-purple-400">def</span> <span class="text-blue-400">objective</span>(self):
-        <span class="text-gray-500"># Seeking opportunities to deploy </span>
-        <span class="text-gray-500"># research into real-world products.</span>
+        <span class="text-gray-500"># Seeking opportunities to deploy research into real-world products.</span>
         <span class="text-purple-400">return</span> <span class="text-green-400">"Innovation"</span></pre>
                     </div>
                 </section>
 
                 <section>
-                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-5 flex items-center gap-3">
+                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-4 flex items-center gap-3">
                         <span class="w-1.5 h-6 bg-brand-orange rounded-full"></span> Experience
                     </h3>
                     
-                    <div class="relative pl-6 border-l-2 border-gray-200 space-y-8">
+                    <div class="relative pl-6 border-l-2 border-gray-200 space-y-6">
                         <div class="relative">
                             <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full border-4 border-white bg-brand-orange shadow-md"></div>
                             <div class="flex justify-between items-baseline mb-1">
-                                <h4 class="text-lg font-bold text-brand-dark">Naver AI Lab</h4>
-                                <span class="font-mono text-sm text-brand-orange font-bold">2025 - Present</span>
+                                <div class="flex items-center gap-3">
+                                    <h4 class="text-lg font-bold text-brand-dark">Naver AI Lab</h4>
+                                    <span class="px-2 py-0.5 bg-orange-100 text-brand-orange text-xs font-bold rounded">Current</span>
+                                </div>
+                                <span class="font-mono text-sm text-gray-500 font-bold">2025 - Present</span>
                             </div>
                             <div class="text-sm font-semibold text-gray-500 mb-2">Research Assistant | Text-to-speech</div>
                             <ul class="list-disc list-outside ml-4 text-sm text-gray-600 space-y-1">
                                 <li>Researching and implementing <strong class="text-gray-800">Emotional Text-to-Speech (ETS)</strong> models for low-resource languages.</li>
-                                <li>Optimizing data pipelines using <strong class="text-gray-800">PyTorch</strong> and <strong class="text-gray-800">Librosa</strong> for large-scale audio datasets.</li>
+                                <li>Optimizing data pipelines using <strong class="text-gray-800">PyTorch</strong> and <strong class="text-gray-800">Librosa</strong> to handle large-scale audio datasets efficiently.</li>
                             </ul>
                         </div>
 
@@ -148,35 +151,35 @@
                 </section>
 
                 <section>
-                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-5 flex items-center gap-3">
+                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-4 flex items-center gap-3">
                         <span class="w-1.5 h-6 bg-brand-orange rounded-full"></span> Key Projects
                     </h3>
                     
-                    <div class="grid grid-cols-1 gap-4">
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300 flex flex-col h-full">
                             <div class="flex justify-between">
                                 <h4 class="font-bold text-gray-800">Text-to-Motion</h4>
                                 <a href="#" class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded hover:bg-brand-orange hover:text-white transition"><i class="fab fa-github"></i> View</a>
                             </div>
-                            <p class="text-xs text-gray-500 mt-2 mb-3">
+                            <p class="text-xs text-gray-500 mt-2 mb-3 flex-grow">
                                 A high-performance system for generating motion based on input prompts.
                             </p>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 mt-auto">
                                 <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">Python</span>
                                 <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">YOLOv8</span>
                                 <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">OpenCV</span>
                             </div>
                         </div>
 
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300">
+                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300 flex flex-col h-full">
                             <div class="flex justify-between">
                                 <h4 class="font-bold text-gray-800">RAG Chatbot for Education</h4>
                                 <a href="#" class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded hover:bg-brand-orange hover:text-white transition"><i class="fab fa-github"></i> View</a>
                             </div>
-                            <p class="text-xs text-gray-500 mt-2 mb-3">
+                            <p class="text-xs text-gray-500 mt-2 mb-3 flex-grow">
                                 QA Bot answering student queries based on textbook context using LangChain & FAISS.
                             </p>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 mt-auto">
                                 <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">LangChain</span>
                                 <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">LLMs</span>
                             </div>
@@ -185,21 +188,26 @@
                 </section>
             </div>
 
-            <div class="w-1/3 space-y-8">
+            <div class="col-span-4 space-y-8 pl-4 border-l border-gray-100">
                 
                 <section>
                     <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
                         Education
                     </h3>
-                    <div class="mb-4">
-                        <h4 class="font-bold text-gray-800">PTIT</h4>
-                        <div class="text-xs text-gray-500 font-mono mb-1">2023 - Present</div>
-                        <div class="text-sm text-gray-600">B.S. Information Technology</div>
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-lg">PTIT</h4>
+                            <div class="text-sm text-gray-600">B.S. Information Technology</div>
+                        </div>
+                        <div class="text-xs text-gray-500 font-mono mt-1 font-bold">2023 - Present</div>
                     </div>
                     
                     <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <div class="text-3xl font-bold text-brand-orange">3.76</div>
-                        <div class="text-xs font-semibold text-gray-500 leading-tight">Current<br>GPA / 4.0</div>
+                        <div class="text-4xl font-bold text-brand-orange">3.76</div>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold text-gray-700 uppercase">Current GPA</span>
+                            <span class="text-[10px] text-gray-500">Scale 4.0</span>
+                        </div>
                     </div>
                 </section>
 
@@ -210,7 +218,7 @@
                     
                     <div class="space-y-4">
                         <div>
-                            <div class="text-xs font-bold text-gray-400 uppercase mb-2">Languages</div>
+                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">Languages</div>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-gray-800 text-white text-xs font-mono rounded">Python</span>
                                 <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">C++</span>
@@ -218,7 +226,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-gray-400 uppercase mb-2">AI & Frameworks</div>
+                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">AI & Frameworks</div>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-brand-orange text-white text-xs font-mono rounded font-bold">PyTorch</span>
                                 <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">TensorFlow</span>
@@ -226,7 +234,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-gray-400 uppercase mb-2">Tools & DevOps</div>
+                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">Tools & DevOps</div>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Docker</span>
                                 <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Git</span>
@@ -242,14 +250,14 @@
                         Honors
                     </h3>
                     <ul class="space-y-4">
-                        <li class="flex gap-3">
+                        <li class="flex gap-3 items-start">
                             <i class="fas fa-trophy text-brand-orange mt-1"></i>
                             <div>
                                 <h5 class="text-sm font-bold text-gray-800">Consolation Prize</h5>
                                 <p class="text-xs text-gray-500">PTIT AI Olympic 2025</p>
                             </div>
                         </li>
-                        <li class="flex gap-3">
+                        <li class="flex gap-3 items-start">
                             <i class="fas fa-medal text-brand-orange mt-1"></i>
                             <div>
                                 <h5 class="text-sm font-bold text-gray-800">Consolation Prize - Chemistry</h5>
@@ -263,19 +271,17 @@
                     <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
                         Languages
                     </h3>
-                    <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded">
+                    <div class="flex justify-between items-center bg-gray-50 px-4 py-3 rounded border border-gray-200">
                         <span class="text-sm font-semibold text-gray-700">English</span>
-                        <span class="text-xs font-mono font-bold text-brand-orange border border-brand-orange px-1 rounded">TOEIC 980</span>
+                        <div class="flex items-center gap-2">
+                             <span class="text-xs text-gray-500">TOEIC</span>
+                             <span class="text-sm font-mono font-bold text-brand-orange">980</span>
+                        </div>
                     </div>
                 </section>
 
             </div>
         </div>
-        
-        <div class="mt-auto border-t border-gray-100 pt-6 text-center text-xs text-gray-400 font-mono">
-            Generated by AI Assistant • Based on PTIT Python Design System
-        </div>
-
     </div>
 
 </body>
