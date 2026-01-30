@@ -1,1 +1,159 @@
-<h1> Hello World ! </h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống bài tập RL - PTIT AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        ptit: '#be1e2d', // Định nghĩa màu đỏ PTIT vào config luôn
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-ptit selection:text-white">
+
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-ptit rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md">
+                        P
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h1 class="font-bold text-lg leading-tight text-gray-900 uppercase tracking-wide">AI Service</h1>
+                        <p class="text-[10px] text-gray-500 font-medium">Học viện CN Bưu chính Viễn thông</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 md:gap-4">
+                    <button class="p-2 text-gray-400 hover:text-ptit hover:bg-red-50 rounded-full transition-colors duration-200">
+                        <span class="material-icons">notifications</span>
+                    </button>
+                    
+                    <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-50 py-1 px-2 rounded-lg transition border border-transparent hover:border-gray-200">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-600 font-bold text-xs border border-gray-300 shadow-inner">
+                            SV
+                        </div>
+                        <div class="hidden md:block text-left">
+                            <p class="text-sm font-medium text-gray-700">Sinh viên</p>
+                            <p class="text-xs text-gray-400">D21CQCN...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <section class="mb-10">
+            <nav class="flex items-center gap-2 text-sm text-gray-500 mb-3 animate-fade-in-up">
+                <a href="#" class="hover:text-ptit transition-colors">Trang chủ</a>
+                <span class="material-icons text-[16px] text-gray-400">chevron_right</span>
+                <span class="text-ptit font-semibold">Danh sách bài tập</span>
+            </nav>
+            
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">Học Tăng Cường</h2>
+                    <p class="mt-2 text-gray-600 max-w-2xl">
+                        Reinforcement Learning Workspace. Chọn môi trường và nộp model ONNX để hệ thống chấm điểm tự động.
+                    </p>
+                </div>
+                </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <a href="arena.html?game=cartpole" class="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:border-ptit/30 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="h-44 bg-gray-50 relative flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-50/50 to-white/20"></div>
+                    <span class="text-7xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out">⚖️</span>
+                    <div class="absolute top-4 right-4 bg-green-100 text-green-700 text-[10px] font-bold px-2.5 py-1 rounded-full border border-green-200 tracking-wide">
+                        DỄ
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-ptit transition-colors mb-2">CartPole-v1</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2 h-10 leading-relaxed">
+                        Bài toán giữ thăng bằng con lắc ngược. Mục tiêu: Giữ gậy không đổ trong 500 bước liên tục.
+                    </p>
+                    <div class="mt-5 flex items-center justify-between pt-4 border-t border-gray-100">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-100 px-2 py-1 rounded">Control Theory</span>
+                        <span class="text-sm font-semibold text-ptit flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Làm bài <span class="material-icons text-sm">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="arena.html?game=gomoku" class="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:border-ptit/30 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="h-44 bg-gray-50 relative flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-orange-50/50 to-white/20"></div>
+                    <span class="text-7xl group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 ease-out">❌⭕</span>
+                    <div class="absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-[10px] font-bold px-2.5 py-1 rounded-full border border-yellow-200 tracking-wide">
+                        TRUNG BÌNH
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-ptit transition-colors mb-2">Cờ Caro (Gomoku)</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2 h-10 leading-relaxed">
+                        Đấu trí trên bàn cờ 15x15. Chiến thắng Bot AI của server bằng cách tạo chuỗi 5 quân liên tiếp.
+                    </p>
+                    <div class="mt-5 flex items-center justify-between pt-4 border-t border-gray-100">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-100 px-2 py-1 rounded">Game Theory</span>
+                        <span class="text-sm font-semibold text-ptit flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Làm bài <span class="material-icons text-sm">arrow_forward</span>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:bg-gray-100 transition-colors cursor-not-allowed h-full min-h-[300px]">
+                <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4 text-gray-400">
+                    <span class="material-icons text-3xl">lock</span>
+                </div>
+                <h3 class="text-gray-500 font-bold text-lg">Bài tập sắp tới</h3>
+                <p class="text-xs text-gray-400 mt-2 max-w-[200px]">
+                    Các môi trường mới như Mario Bros và Doom đang được tích hợp...
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-sm text-gray-500">
+                    &copy; 2025 Khoa CNTT 1. Học viện Công nghệ Bưu chính Viễn thông.
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-ptit transition-colors text-sm">Điều khoản</a>
+                    <a href="#" class="text-gray-400 hover:text-ptit transition-colors text-sm">Bảo mật</a>
+                    <a href="#" class="text-gray-400 hover:text-ptit transition-colors text-sm">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
