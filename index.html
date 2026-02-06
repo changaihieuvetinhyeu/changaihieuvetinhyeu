@@ -1,288 +1,427 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV_NguyenTuanAnh_Landscape</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            orange: '#F59E0B',
-                            dark: '#111827',
-                            gray: '#374151',
-                            code: '#1e1e1e' 
-                        }
-                    },
-                    screens: {
-                        'print': {'raw': 'print'},
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Quản Lý Sinh Viên - AI Style</title>
     <style>
-        /* A4 Landscape Size Setup */
-        @page {
-            size: A4 landscape;
-            margin: 0;
+        /* --- 1. Cấu hình cơ bản & Font chữ --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        :root {
+            --primary-orange: #FF9900;
+            --primary-orange-hover: #e68a00;
+            --bg-color: #FFFBF5; /* Màu kem nhạt giống ảnh */
+            --text-dark: #1A1A1A;
+            --terminal-bg: #1E1E2E; /* Màu nền tối của terminal */
+            --terminal-text: #A6ACCD;
         }
-        body {
-            background: #f3f4f6;
-        }
-        .a4-page-landscape {
-            width: 297mm; /* Chiều rộng A4 ngang */
-            min-height: 210mm; /* Chiều cao A4 ngang */
-            background: white;
-            margin: 40px auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
+
+        * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        @media print {
-            body { background: white; }
-            .a4-page-landscape { 
-                width: 100%; 
-                margin: 0; 
-                box-shadow: none; 
-                min-height: 100vh;
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- 2. Layout chia 2 cột --- */
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* --- 3. Cột Trái: Form nhập liệu (Style giống phần text bên trái) --- */
+        .left-panel {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        h1 span {
+            color: var(--primary-orange);
+            display: block;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: #fff;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-orange);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-orange-hover);
+        }
+
+        .btn-secondary {
+            background-color: #E5E7EB;
+            color: #374151;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d1d5db;
+        }
+
+        /* --- 4. Cột Phải: Terminal hiển thị (Style giống cái máy tính bên phải) --- */
+        .right-panel {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .terminal-window {
+            background-color: var(--terminal-bg);
+            width: 100%;
+            max-width: 550px;
+            height: 500px; /* Chiều cao cố định */
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .terminal-header {
+            background-color: #27273A;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background-color: #FF5F56; }
+        .dot.yellow { background-color: #FFBD2E; }
+        .dot.green { background-color: #27C93F; }
+
+        .terminal-title {
+            margin-left: 20px;
+            color: #888;
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--terminal-text);
+            overflow-y: auto; /* Cho phép cuộn nếu danh sách dài */
+            flex: 1;
+        }
+
+        /* Table styling inside terminal */
+        .student-item {
+            border-bottom: 1px solid #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .student-info {
+            line-height: 1.5;
+        }
+
+        .code-keyword { color: #C792EA; } /* Purple like code */
+        .code-string { color: #C3E88D; } /* Green like string */
+        .code-number { color: #F78C6C; } /* Orange like number */
+        .code-var { color: #82AAFF; } /* Blue */
+
+        .action-btn {
+            background: transparent;
+            border: 1px solid #555;
+            color: #ddd;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        
+        .action-btn:hover {
+            background: #444;
+            border-color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px 0;
             }
-            .no-print { display: none; }
+            
+            h1 { font-size: 2.5rem; }
+            .terminal-window { height: 400px; }
         }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
     </style>
 </head>
-<body class="text-gray-800 antialiased">
+<body>
 
-    <div class="fixed bottom-8 right-8 no-print z-50">
-        <button onclick="window.print()" class="bg-brand-orange text-white w-14 h-14 rounded-full shadow-xl hover:bg-orange-600 hover:-translate-y-1 transition flex items-center justify-center text-xl">
-            <i class="fas fa-print"></i>
-        </button>
-    </div>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Quản lý <span>Sinh viên</span></h1>
+            <p class="subtitle">Hệ thống quản lý thông tin học tập thông minh. Nhập thông tin để thêm vào cơ sở dữ liệu.</p>
 
-    <div class="a4-page-landscape p-10 flex flex-col gap-6">
-        
-        <header class="flex justify-between items-center border-b-2 border-gray-100 pb-6">
-            <div>
-                <h1 class="text-5xl font-extrabold text-brand-dark tracking-tight">
-                    NGUYEN TUAN <span class="text-brand-orange">ANH</span>
-                </h1>
-                <h2 class="text-xl font-mono text-gray-500 mt-1 font-semibold">
-                    <span class="text-brand-orange">&lt;/&gt;</span> AI Researcher & Engineer
-                </h2>
-            </div>
-            <div class="text-right text-sm font-medium text-gray-600 grid grid-cols-2 gap-x-8 gap-y-1">
-                <p><a href="mailto:AnhNT.B23CN039@stu.ptit.edu.vn" class="hover:text-brand-orange transition">AnhNT.B23CN039@stu.ptit.edu.vn</a> <i class="fas fa-envelope ml-2 text-brand-orange w-4"></i></p>
-                <p>090 6238 615 <i class="fas fa-phone ml-2 text-brand-orange w-4"></i></p>
-                <p><a href="https://github.com/changaihieuvetinhyeu" class="hover:text-brand-orange transition">github.com/changaihieuvetinhyeu</a> <i class="fab fa-github ml-2 text-brand-orange w-4"></i></p>
-                <p>Hanoi, Vietnam <i class="fas fa-map-marker-alt ml-2 text-brand-orange w-4"></i></p>
-            </div>
-        </header>
+            <form id="studentForm">
+                <div class="form-group">
+                    <input type="text" id="masv" placeholder="Mã SV (Ví dụ: B19DCCN001)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="hoten" placeholder="Họ và tên" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="ngaysinh" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="lop" placeholder="Lớp (Ví dụ: D19CQCN01)" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="gpa" placeholder="Điểm GPA (0 - 4.0)" step="0.01" min="0" max="4" required>
+                </div>
 
-        <div class="grid grid-cols-12 gap-10 h-full">
-            
-            <div class="col-span-8 space-y-6">
-                
-                <section>
-                    <div class="bg-brand-code rounded-lg p-4 shadow-lg border border-gray-800 relative group overflow-hidden">
-                         <div class="absolute top-3 right-3 flex gap-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                        </div>
-                        <pre class="font-mono text-xs text-gray-300 whitespace-pre-wrap"><span class="text-purple-400">class</span> <span class="text-yellow-400">Candidate</span>:
-    <span class="text-purple-400">def</span> <span class="text-blue-400">__init__</span>(self):
-        self.role = <span class="text-green-400">"AI Research Assistant"</span>
-        self.passion = [<span class="text-green-400">"Reinforcement Learning"</span>, <span class="text-green-400">"GenAI"</span>, <span class="text-green-400">"Automation"</span>]
-        
-    <span class="text-purple-400">def</span> <span class="text-blue-400">objective</span>(self):
-        <span class="text-gray-500"># Seeking opportunities to deploy research into real-world products.</span>
-        <span class="text-purple-400">return</span> <span class="text-green-400">"Innovation"</span></pre>
+                <div class="btn-group">
+                    <button type="submit" class="btn-primary" id="btnSubmit">Thêm sinh viên</button>
+                    <button type="button" class="btn-secondary" onclick="resetForm()">Làm mới</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="right-panel">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
                     </div>
-                </section>
-
-                <section>
-                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-4 flex items-center gap-3">
-                        <span class="w-1.5 h-6 bg-brand-orange rounded-full"></span> Experience
-                    </h3>
-                    
-                    <div class="relative pl-6 border-l-2 border-gray-200 space-y-6">
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full border-4 border-white bg-brand-orange shadow-md"></div>
-                            <div class="flex justify-between items-baseline mb-1">
-                                <div class="flex items-center gap-3">
-                                    <h4 class="text-lg font-bold text-brand-dark">Naver AI Lab</h4>
-                                    <span class="px-2 py-0.5 bg-orange-100 text-brand-orange text-xs font-bold rounded">Current</span>
-                                </div>
-                                <span class="font-mono text-sm text-gray-500 font-bold">2025 - Present</span>
-                            </div>
-                            <div class="text-sm font-semibold text-gray-500 mb-2">Research Assistant | Text-to-speech</div>
-                            <ul class="list-disc list-outside ml-4 text-sm text-gray-600 space-y-1">
-                                <li>Researching and implementing <strong class="text-gray-800">Emotional Text-to-Speech (ETS)</strong> models for low-resource languages.</li>
-                                <li>Optimizing data pipelines using <strong class="text-gray-800">PyTorch</strong> and <strong class="text-gray-800">Librosa</strong> to handle large-scale audio datasets efficiently.</li>
-                            </ul>
-                        </div>
-
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full border-4 border-white bg-gray-300"></div>
-                            <div class="flex justify-between items-baseline mb-1">
-                                <h4 class="text-lg font-bold text-brand-dark">Freelance Developer</h4>
-                                <span class="font-mono text-sm text-gray-500 font-bold">2024 - 2025</span>
-                            </div>
-                            <div class="text-sm font-semibold text-gray-500 mb-2">Fullstack AI Integration</div>
-                            <ul class="list-disc list-outside ml-4 text-sm text-gray-600 space-y-1">
-                                <li>Developed an Emotion Recognition Web App using <strong class="text-gray-800">YOLO</strong> and <strong class="text-gray-800">FastAPI</strong>.</li>
-                                <li>Deployed models on Docker containers ensuring <strong class="text-gray-800">99.9% uptime</strong> for client demos.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-4 flex items-center gap-3">
-                        <span class="w-1.5 h-6 bg-brand-orange rounded-full"></span> Key Projects
-                    </h3>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300 flex flex-col h-full">
-                            <div class="flex justify-between">
-                                <h4 class="font-bold text-gray-800">Text-to-Motion</h4>
-                                <a href="#" class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded hover:bg-brand-orange hover:text-white transition"><i class="fab fa-github"></i> View</a>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-2 mb-3 flex-grow">
-                                A high-performance system for generating motion based on input prompts.
-                            </p>
-                            <div class="flex gap-2 mt-auto">
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">Python</span>
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">YOLOv8</span>
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">OpenCV</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300 flex flex-col h-full">
-                            <div class="flex justify-between">
-                                <h4 class="font-bold text-gray-800">RAG Chatbot for Education</h4>
-                                <a href="#" class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded hover:bg-brand-orange hover:text-white transition"><i class="fab fa-github"></i> View</a>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-2 mb-3 flex-grow">
-                                QA Bot answering student queries based on textbook context using LangChain & FAISS.
-                            </p>
-                            <div class="flex gap-2 mt-auto">
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">LangChain</span>
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">LLMs</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="col-span-4 space-y-8 pl-4 border-l border-gray-100">
-                
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Education
-                    </h3>
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-lg">PTIT</h4>
-                            <div class="text-sm text-gray-600">B.S. Information Technology</div>
-                        </div>
-                        <div class="text-xs text-gray-500 font-mono mt-1 font-bold">2023 - Present</div>
-                    </div>
-                    
-                    <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <div class="text-4xl font-bold text-brand-orange">3.76</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs font-bold text-gray-700 uppercase">Current GPA</span>
-                            <span class="text-[10px] text-gray-500">Scale 4.0</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Tech Stack
-                    </h3>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">Languages</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-800 text-white text-xs font-mono rounded">Python</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">C++</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">MySQL</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">AI & Frameworks</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-brand-orange text-white text-xs font-mono rounded font-bold">PyTorch</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">TensorFlow</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Transformers</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">Tools & DevOps</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Docker</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Git</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">FastAPI</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Linux</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Honors
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-trophy text-brand-orange mt-1"></i>
-                            <div>
-                                <h5 class="text-sm font-bold text-gray-800">Consolation Prize</h5>
-                                <p class="text-xs text-gray-500">PTIT AI Olympic 2025</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-medal text-brand-orange mt-1"></i>
-                            <div>
-                                <h5 class="text-sm font-bold text-gray-800">Consolation Prize - Chemistry</h5>
-                                <p class="text-xs text-gray-500">Provincial Level (Grade 12)</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Languages
-                    </h3>
-                    <div class="flex justify-between items-center bg-gray-50 px-4 py-3 rounded border border-gray-200">
-                        <span class="text-sm font-semibold text-gray-700">English</span>
-                        <div class="flex items-center gap-2">
-                             <span class="text-xs text-gray-500">TOEIC</span>
-                             <span class="text-sm font-mono font-bold text-brand-orange">980</span>
-                        </div>
-                    </div>
-                </section>
-
+                    <div class="terminal-title">student_manager.js</div>
+                </div>
+                <div class="terminal-body" id="terminalOutput">
+                    <div style="color: #666; font-style: italic;">// Danh sách sinh viên trống...</div>
+                    <div style="color: #666; font-style: italic;">// Vui lòng nhập thông tin bên trái.</div>
+                </div>
             </div>
         </div>
     </div>
 
+    <script>
+        // --- 1. ĐỊNH NGHĨA CLASS SINH VIÊN (Theo yêu cầu đề bài) ---
+        class Student {
+            constructor(maSV, hoTen, ngaySinh, lop, gpa) {
+                this.maSV = maSV;
+                this.hoTen = hoTen;
+                this.ngaySinh = ngaySinh;
+                this.lop = lop;
+                this.gpa = gpa;
+            }
+
+            // Phương thức cập nhật thông tin
+            updateInfo(hoTen, ngaySinh, lop, gpa) {
+                this.hoTen = hoTen;
+                this.ngaySinh = ngaySinh;
+                this.lop = lop;
+                this.gpa = gpa;
+            }
+
+            // Phương thức format hiển thị kiểu code
+            toHTML() {
+                return `
+                    <div class="student-info">
+                        <span class="code-keyword">const</span> <span class="code-var">${this.maSV}</span> = {<br>
+                        &nbsp;&nbsp;name: <span class="code-string">"${this.hoTen}"</span>,<br>
+                        &nbsp;&nbsp;class: <span class="code-string">"${this.lop}"</span>,<br>
+                        &nbsp;&nbsp;gpa: <span class="code-number">${this.gpa}</span><br>
+                        };
+                    </div>
+                    <div>
+                        <button class="action-btn" onclick="prepareEdit('${this.maSV}')">Edit</button>
+                    </div>
+                `;
+            }
+        }
+
+        // --- 2. QUẢN LÝ DỮ LIỆU ---
+        let studentList = [];
+        let isEditing = false; // Biến cờ để biết đang thêm mới hay sửa
+
+        // --- 3. CÁC HÀM XỬ LÝ (Controller) ---
+
+        // Hàm hiển thị danh sách ra màn hình (Render)
+        function renderStudents() {
+            const output = document.getElementById('terminalOutput');
+            output.innerHTML = ''; // Xóa nội dung cũ
+
+            if (studentList.length === 0) {
+                output.innerHTML = `
+                    <div style="color: #666; font-style: italic;">// Danh sách sinh viên trống...</div>
+                    <div style="color: #666; font-style: italic;">// Vui lòng nhập thông tin bên trái.</div>
+                `;
+                return;
+            }
+
+            // Dấu nhắc lệnh
+            output.innerHTML += `<div style="color: #4CAF50; margin-bottom: 10px;">➜  ~ node list_students.js</div>`;
+
+            studentList.forEach(sv => {
+                const div = document.createElement('div');
+                div.className = 'student-item';
+                div.innerHTML = sv.toHTML();
+                output.appendChild(div);
+            });
+        }
+
+        // Hàm xử lý khi nhấn Submit
+        document.getElementById('studentForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Ngăn load lại trang
+
+            // Lấy dữ liệu từ form
+            const maSV = document.getElementById('masv').value.trim();
+            const hoTen = document.getElementById('hoten').value.trim();
+            const ngaySinh = document.getElementById('ngaysinh').value;
+            const lop = document.getElementById('lop').value.trim();
+            const gpa = parseFloat(document.getElementById('gpa').value);
+
+            if (isEditing) {
+                // --- LOGIC CẬP NHẬT (UPDATE) ---
+                const student = studentList.find(s => s.maSV === maSV);
+                if (student) {
+                    student.updateInfo(hoTen, ngaySinh, lop, gpa); // Gọi phương thức của đối tượng
+                    alert(`Đã cập nhật thông tin sinh viên ${maSV}`);
+                }
+                
+                // Reset trạng thái form về thêm mới
+                document.getElementById('masv').readOnly = false;
+                document.getElementById('btnSubmit').innerText = "Thêm sinh viên";
+                document.getElementById('btnSubmit').style.backgroundColor = ""; // Reset màu
+                isEditing = false;
+
+            } else {
+                // --- LOGIC THÊM MỚI (CREATE) ---
+                // Kiểm tra trùng mã SV
+                if (studentList.some(s => s.maSV === maSV)) {
+                    alert('Mã sinh viên này đã tồn tại!');
+                    return;
+                }
+
+                // Tạo đối tượng Student mới
+                const newStudent = new Student(maSV, hoTen, ngaySinh, lop, gpa);
+                studentList.push(newStudent);
+            }
+
+            // Render lại giao diện và reset form
+            renderStudents();
+            resetForm();
+        });
+
+        // Hàm chuẩn bị sửa (Đưa dữ liệu lên form)
+        window.prepareEdit = function(maSV) {
+            const student = studentList.find(s => s.maSV === maSV);
+            if (!student) return;
+
+            // Đổ dữ liệu vào ô input
+            document.getElementById('masv').value = student.maSV;
+            document.getElementById('hoten').value = student.hoTen;
+            document.getElementById('ngaysinh').value = student.ngaySinh;
+            document.getElementById('lop').value = student.lop;
+            document.getElementById('gpa').value = student.gpa;
+
+            // Khóa ô Mã SV (không cho sửa ID)
+            document.getElementById('masv').readOnly = true;
+
+            // Đổi nút thành Cập nhật
+            const btn = document.getElementById('btnSubmit');
+            btn.innerText = "Lưu thay đổi";
+            btn.style.backgroundColor = "#27C93F"; // Đổi màu xanh lá
+
+            isEditing = true;
+        }
+
+        // Hàm reset form
+        window.resetForm = function() {
+            document.getElementById('studentForm').reset();
+            document.getElementById('masv').readOnly = false;
+            document.getElementById('btnSubmit').innerText = "Thêm sinh viên";
+            document.getElementById('btnSubmit').style.backgroundColor = "";
+            isEditing = false;
+        }
+    </script>
 </body>
 </html>
