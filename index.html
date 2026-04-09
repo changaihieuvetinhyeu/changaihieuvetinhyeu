@@ -1,288 +1,2194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV_NguyenTuanAnh_Landscape</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            orange: '#F59E0B',
-                            dark: '#111827',
-                            gray: '#374151',
-                            code: '#1e1e1e' 
-                        }
-                    },
-                    screens: {
-                        'print': {'raw': 'print'},
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* A4 Landscape Size Setup */
-        @page {
-            size: A4 landscape;
-            margin: 0;
-        }
-        body {
-            background: #f3f4f6;
-        }
-        .a4-page-landscape {
-            width: 297mm; /* Chiều rộng A4 ngang */
-            min-height: 210mm; /* Chiều cao A4 ngang */
-            background: white;
-            margin: 40px auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            box-sizing: border-box;
-        }
-        @media print {
-            body { background: white; }
-            .a4-page-landscape { 
-                width: 100%; 
-                margin: 0; 
-                box-shadow: none; 
-                min-height: 100vh;
-            }
-            .no-print { display: none; }
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-    </style>
-</head>
-<body class="text-gray-800 antialiased">
-
-    <div class="fixed bottom-8 right-8 no-print z-50">
-        <button onclick="window.print()" class="bg-brand-orange text-white w-14 h-14 rounded-full shadow-xl hover:bg-orange-600 hover:-translate-y-1 transition flex items-center justify-center text-xl">
-            <i class="fas fa-print"></i>
-        </button>
-    </div>
-
-    <div class="a4-page-landscape p-10 flex flex-col gap-6">
-        
-        <header class="flex justify-between items-center border-b-2 border-gray-100 pb-6">
-            <div>
-                <h1 class="text-5xl font-extrabold text-brand-dark tracking-tight">
-                    NGUYEN TUAN <span class="text-brand-orange">ANH</span>
-                </h1>
-                <h2 class="text-xl font-mono text-gray-500 mt-1 font-semibold">
-                    <span class="text-brand-orange">&lt;/&gt;</span> AI Researcher & Engineer
-                </h2>
+<div class="main-container">
+    <div id="quiz-view-container">
+        <div class="slide-content" id="slide-content-area">
             </div>
-            <div class="text-right text-sm font-medium text-gray-600 grid grid-cols-2 gap-x-8 gap-y-1">
-                <p><a href="mailto:AnhNT.B23CN039@stu.ptit.edu.vn" class="hover:text-brand-orange transition">AnhNT.B23CN039@stu.ptit.edu.vn</a> <i class="fas fa-envelope ml-2 text-brand-orange w-4"></i></p>
-                <p>090 6238 615 <i class="fas fa-phone ml-2 text-brand-orange w-4"></i></p>
-                <p><a href="https://github.com/changaihieuvetinhyeu" class="hover:text-brand-orange transition">github.com/changaihieuvetinhyeu</a> <i class="fab fa-github ml-2 text-brand-orange w-4"></i></p>
-                <p>Hanoi, Vietnam <i class="fas fa-map-marker-alt ml-2 text-brand-orange w-4"></i></p>
+        <div id="progress-navigation-wrapper">
+            <span id="progress-text"></span>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
             </div>
-        </header>
-
-        <div class="grid grid-cols-12 gap-10 h-full">
-            
-            <div class="col-span-8 space-y-6">
-                
-                <section>
-                    <div class="bg-brand-code rounded-lg p-4 shadow-lg border border-gray-800 relative group overflow-hidden">
-                         <div class="absolute top-3 right-3 flex gap-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                        </div>
-                        <pre class="font-mono text-xs text-gray-300 whitespace-pre-wrap"><span class="text-purple-400">class</span> <span class="text-yellow-400">Candidate</span>:
-    <span class="text-purple-400">def</span> <span class="text-blue-400">__init__</span>(self):
-        self.role = <span class="text-green-400">"AI Research Assistant"</span>
-        self.passion = [<span class="text-green-400">"Reinforcement Learning"</span>, <span class="text-green-400">"GenAI"</span>, <span class="text-green-400">"Automation"</span>]
-        
-    <span class="text-purple-400">def</span> <span class="text-blue-400">objective</span>(self):
-        <span class="text-gray-500"># Seeking opportunities to deploy research into real-world products.</span>
-        <span class="text-purple-400">return</span> <span class="text-green-400">"Innovation"</span></pre>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-4 flex items-center gap-3">
-                        <span class="w-1.5 h-6 bg-brand-orange rounded-full"></span> Experience
-                    </h3>
-                    
-                    <div class="relative pl-6 border-l-2 border-gray-200 space-y-6">
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full border-4 border-white bg-brand-orange shadow-md"></div>
-                            <div class="flex justify-between items-baseline mb-1">
-                                <div class="flex items-center gap-3">
-                                    <h4 class="text-lg font-bold text-brand-dark">Naver AI Lab</h4>
-                                    <span class="px-2 py-0.5 bg-orange-100 text-brand-orange text-xs font-bold rounded">Current</span>
-                                </div>
-                                <span class="font-mono text-sm text-gray-500 font-bold">2025 - Present</span>
-                            </div>
-                            <div class="text-sm font-semibold text-gray-500 mb-2">Research Assistant | Text-to-speech</div>
-                            <ul class="list-disc list-outside ml-4 text-sm text-gray-600 space-y-1">
-                                <li>Researching and implementing <strong class="text-gray-800">Emotional Text-to-Speech (ETS)</strong> models for low-resource languages.</li>
-                                <li>Optimizing data pipelines using <strong class="text-gray-800">PyTorch</strong> and <strong class="text-gray-800">Librosa</strong> to handle large-scale audio datasets efficiently.</li>
-                            </ul>
-                        </div>
-
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full border-4 border-white bg-gray-300"></div>
-                            <div class="flex justify-between items-baseline mb-1">
-                                <h4 class="text-lg font-bold text-brand-dark">Freelance Developer</h4>
-                                <span class="font-mono text-sm text-gray-500 font-bold">2024 - 2025</span>
-                            </div>
-                            <div class="text-sm font-semibold text-gray-500 mb-2">Fullstack AI Integration</div>
-                            <ul class="list-disc list-outside ml-4 text-sm text-gray-600 space-y-1">
-                                <li>Developed an Emotion Recognition Web App using <strong class="text-gray-800">YOLO</strong> and <strong class="text-gray-800">FastAPI</strong>.</li>
-                                <li>Deployed models on Docker containers ensuring <strong class="text-gray-800">99.9% uptime</strong> for client demos.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-xl font-bold text-brand-dark uppercase tracking-wider mb-4 flex items-center gap-3">
-                        <span class="w-1.5 h-6 bg-brand-orange rounded-full"></span> Key Projects
-                    </h3>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300 flex flex-col h-full">
-                            <div class="flex justify-between">
-                                <h4 class="font-bold text-gray-800">Text-to-Motion</h4>
-                                <a href="#" class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded hover:bg-brand-orange hover:text-white transition"><i class="fab fa-github"></i> View</a>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-2 mb-3 flex-grow">
-                                A high-performance system for generating motion based on input prompts.
-                            </p>
-                            <div class="flex gap-2 mt-auto">
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">Python</span>
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">YOLOv8</span>
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">OpenCV</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md hover:border-brand-orange transition duration-300 flex flex-col h-full">
-                            <div class="flex justify-between">
-                                <h4 class="font-bold text-gray-800">RAG Chatbot for Education</h4>
-                                <a href="#" class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded hover:bg-brand-orange hover:text-white transition"><i class="fab fa-github"></i> View</a>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-2 mb-3 flex-grow">
-                                QA Bot answering student queries based on textbook context using LangChain & FAISS.
-                            </p>
-                            <div class="flex gap-2 mt-auto">
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">LangChain</span>
-                                <span class="px-2 py-0.5 bg-orange-50 text-orange-600 text-[10px] font-bold rounded border border-orange-100 uppercase">LLMs</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="col-span-4 space-y-8 pl-4 border-l border-gray-100">
-                
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Education
-                    </h3>
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-lg">PTIT</h4>
-                            <div class="text-sm text-gray-600">B.S. Information Technology</div>
-                        </div>
-                        <div class="text-xs text-gray-500 font-mono mt-1 font-bold">2023 - Present</div>
-                    </div>
-                    
-                    <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <div class="text-4xl font-bold text-brand-orange">3.76</div>
-                        <div class="flex flex-col">
-                            <span class="text-xs font-bold text-gray-700 uppercase">Current GPA</span>
-                            <span class="text-[10px] text-gray-500">Scale 4.0</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Tech Stack
-                    </h3>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">Languages</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-800 text-white text-xs font-mono rounded">Python</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">C++</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">MySQL</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">AI & Frameworks</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-brand-orange text-white text-xs font-mono rounded font-bold">PyTorch</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">TensorFlow</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Transformers</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest">Tools & DevOps</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Docker</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Git</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">FastAPI</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-mono rounded">Linux</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Honors
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-trophy text-brand-orange mt-1"></i>
-                            <div>
-                                <h5 class="text-sm font-bold text-gray-800">Consolation Prize</h5>
-                                <p class="text-xs text-gray-500">PTIT AI Olympic 2025</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-medal text-brand-orange mt-1"></i>
-                            <div>
-                                <h5 class="text-sm font-bold text-gray-800">Consolation Prize - Chemistry</h5>
-                                <p class="text-xs text-gray-500">Provincial Level (Grade 12)</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-bold text-brand-dark uppercase tracking-wider mb-4 border-b-2 border-brand-orange inline-block pb-1">
-                        Languages
-                    </h3>
-                    <div class="flex justify-between items-center bg-gray-50 px-4 py-3 rounded border border-gray-200">
-                        <span class="text-sm font-semibold text-gray-700">English</span>
-                        <div class="flex items-center gap-2">
-                             <span class="text-xs text-gray-500">TOEIC</span>
-                             <span class="text-sm font-mono font-bold text-brand-orange">980</span>
-                        </div>
-                    </div>
-                </section>
-
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="quiz-nav-btn">Quay Lại</button>
+                <button id="next-btn" class="quiz-nav-btn">Bắt Đầu</button>
             </div>
         </div>
     </div>
 
-</body>
-</html>
+    <form id="careerTestForm" class="hidden">
+        <h1>Bài Trắc Nghiệm Định Hướng Nghề Nghiệp</h1>
+        <div class="intro">
+            <strong>Hướng dẫn:</strong> Hãy đọc kỹ từng câu và chọn mức độ phù hợp nhất với bản thân (1: Hoàn toàn không phù hợp - 5: Rất phù hợp). Không có câu trả lời nào là đúng hay sai, hãy cứ thành thật nhé!
+            <p class="intro" style="font-size: 14px;color: #555">Thang điểm: 1 (Không thích) - 2 (Ít thích) - 3 (Bình thường) - 4 (Thích) - 5 (Rất thích)</p>
+        </div>
+
+        <h2>PHẦN A: MÌNH THÍCH GÌ NHỈ? (SỞ THÍCH & HỨNG THÚ)</h2>
+        <p class="intro" style="font-size: 14px;color: #555">Thang điểm: 1 (Không thích) - 2 (Ít thích) - 3 (Bình thường) - 4 (Thích) - 5 (Rất thích)</p>
+
+        <h3>Khoa học & Kỹ thuật thực tế</h3>
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">1.</span> Khi học môn Vật Lý, bạn có thấy thú vị khi tìm hiểu về điện, mạch điện, nam châm, hay cách máy móc hoạt động không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q1" value="1"> 1</label>
+                <label><input type="radio" name="q1" value="2"> 2</label>
+                <label><input type="radio" name="q1" value="3"> 3</label>
+                <label><input type="radio" name="q1" value="4"> 4</label>
+                <label><input type="radio" name="q1" value="5"> 5</label>
+            </div>
+        </div>
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">2.</span> Bạn có thích mày mò, tháo lắp các đồ vật điện tử trong nhà (ví dụ: remote hỏng, đồ chơi điện tử) để xem bên trong có gì và cố gắng sửa chúng không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q2" value="1"> 1</label>
+                <label><input type="radio" name="q2" value="2"> 2</label>
+                <label><input type="radio" name="q2" value="3"> 3</label>
+                <label><input type="radio" name="q2" value="4"> 4</label>
+                <label><input type="radio" name="q2" value="5"> 5</label>
+            </div>
+        </div>
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">3.</span> Bạn có thích xem các video về chế tạo robot mini, xe điều khiển từ xa, hoặc các thiết bị tự động đơn giản không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q3" value="1"> 1</label>
+                <label><input type="radio" name="q3" value="2"> 2</label>
+                <label><input type="radio" name="q3" value="3"> 3</label>
+                <label><input type="radio" name="q3" value="4"> 4</label>
+                <label><input type="radio" name="q3" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">4.</span> Bạn có tò mò về cách các con chip nhỏ xíu trong điện thoại, máy tính (vi mạch) giúp chúng hoạt động siêu nhanh và thông minh không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q4" value="1"> 1</label>
+                <label><input type="radio" name="q4" value="2"> 2</label>
+                <label><input type="radio" name="q4" value="3"> 3</label>
+                <label><input type="radio" name="q4" value="4"> 4</label>
+                <label><input type="radio" name="q4" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">5.</span> Khi nghĩ đến việc điều khiển một hệ thống tự động (ví dụ: đèn tự bật tắt, cửa tự mở), bạn có thấy “ngầu” và muốn tìm hiểu cách làm không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q5" value="1"> 1</label>
+                <label><input type="radio" name="q5" value="2"> 2</label>
+                <label><input type="radio" name="q5" value="3"> 3</label>
+                <label><input type="radio" name="q5" value="4"> 4</label>
+                <label><input type="radio" name="q5" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">6.</span> Bạn có thích tìm hiểu về sóng vô tuyến, cách điện thoại di động truyền tín hiệu, hoặc cách Wi-Fi hoạt động không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q6" value="1"> 1</label>
+                <label><input type="radio" name="q6" value="2"> 2</label>
+                <label><input type="radio" name="q6" value="3"> 3</label>
+                <label><input type="radio" name="q6" value="4"> 4</label>
+                <label><input type="radio" name="q6" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">7.</span> Bạn có hứng thú với việc thiết kế các mạch điện tử, dù chỉ là trên giấy hoặc phần mềm mô phỏng không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q7" value="1"> 1</label>
+                <label><input type="radio" name="q7" value="2"> 2</label>
+                <label><input type="radio" name="q7" value="3"> 3</label>
+                <label><input type="radio" name="q7" value="4"> 4</label>
+                <label><input type="radio" name="q7" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">8.</span> Bạn có thích tìm hiểu về các loại cảm biến (ví dụ: cảm biến nhiệt độ, ánh sáng, chuyển động) và cách chúng thu thập thông tin từ môi trường không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q8" value="1"> 1</label>
+                <label><input type="radio" name="q8" value="2"> 2</label>
+                <label><input type="radio" name="q8" value="3"> 3</label>
+                <label><input type="radio" name="q8" value="4"> 4</label>
+                <label><input type="radio" name="q8" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h3>Máy tính & Công nghệ số</h3>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">9.</span> Bạn có thích “vọc vạch” máy tính, cài đặt phần mềm, tùy chỉnh giao diện, hay tìm cách làm cho máy chạy “mượt” hơn không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q9" value="1"> 1</label>
+                <label><input type="radio" name="q9" value="2"> 2</label>
+                <label><input type="radio" name="q9" value="3"> 3</label>
+                <label><input type="radio" name="q9" value="4"> 4</label>
+                <label><input type="radio" name="q9" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">10.</span> Bạn có hứng thú với việc tự tạo ra một thứ gì đó bằng máy tính, ví dụ: một trang web đơn giản, một trò chơi nhỏ, một ứng dụng điện thoại cơ bản (dù chỉ là ý tưởng)?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q10" value="1"> 1</label>
+                <label><input type="radio" name="q10" value="2"> 2</label>
+                <label><input type="radio" name="q10" value="3"> 3</label>
+                <label><input type="radio" name="q10" value="4"> 4</label>
+                <label><input type="radio" name="q10" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">11.</span> Bạn có thích giải các câu đố logic, Sudoku, hay các bài toán yêu cầu suy luận theo từng bước để tìm ra đáp án không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q11" value="1"> 1</label>
+                <label><input type="radio" name="q11" value="2"> 2</label>
+                <label><input type="radio" name="q11" value="3"> 3</label>
+                <label><input type="radio" name="q11" value="4"> 4</label>
+                <label><input type="radio" name="q11" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">12.</span> Bạn có tò mò về cách các hacker tấn công hệ thống và làm thế nào để bảo vệ máy tính, tài khoản cá nhân khỏi bị “hack” không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q12" value="1"> 1</label>
+                <label><input type="radio" name="q12" value="2"> 2</label>
+                <label><input type="radio" name="q12" value="3"> 3</label>
+                <label><input type="radio" name="q12" value="4"> 4</label>
+                <label><input type="radio" name="q12" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">13.</span> Khi nghe về “Trí tuệ nhân tạo (AI)” (ví dụ: trợ lý ảo Siri/Google, ChatGPT, xe tự lái), bạn có thấy tò mò và muốn biết nó hoạt động như thế nào không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q13" value="1"> 1</label>
+                <label><input type="radio" name="q13" value="2"> 2</label>
+                <label><input type="radio" name="q13" value="3"> 3</label>
+                <label><input type="radio" name="q13" value="4"> 4</label>
+                <label><input type="radio" name="q13" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">14.</span> Bạn có thích phân tích các bảng số liệu (ví dụ: điểm số của lớp, kết quả khảo sát) để tìm ra những điều thú vị, những quy luật ẩn sau các con số không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q14" value="1"> 1</label>
+                <label><input type="radio" name="q14" value="2"> 2</label>
+                <label><input type="radio" name="q14" value="3"> 3</label>
+                <label><input type="radio" name="q14" value="4"> 4</label>
+                <label><input type="radio" name="q14" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">15.</span> Bạn có thích chơi game và thường để ý đến đồ họa, cốt truyện, cách chơi, hay thậm chí nghĩ “nếu mình làm game thì sẽ…” không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q15" value="1"> 1</label>
+                <label><input type="radio" name="q15" value="2"> 2</label>
+                <label><input type="radio" name="q15" value="3"> 3</label>
+                <label><input type="radio" name="q15" value="4"> 4</label>
+                <label><input type="radio" name="q15" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">16.</span> Bạn có quan tâm đến việc làm thế nào để thông tin (hình ảnh, video, tin nhắn) được gửi đi nhanh chóng và an toàn qua mạng Internet không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q16" value="1"> 1</label>
+                <label><input type="radio" name="q16" value="2"> 2</label>
+                <label><input type="radio" name="q16" value="3"> 3</label>
+                <label><input type="radio" name="q16" value="4"> 4</label>
+                <label><input type="radio" name="q16" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">17.</span> Bạn có thích sắp xếp thông tin một cách có hệ thống, tạo ra các “thư viện” dữ liệu để dễ dàng tìm kiếm và sử dụng không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q17" value="1"> 1</label>
+                <label><input type="radio" name="q17" value="2"> 2</label>
+                <label><input type="radio" name="q17" value="3"> 3</label>
+                <label><input type="radio" name="q17" value="4"> 4</label>
+                <label><input type="radio" name="q17" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">18.</span> Bạn có thích tìm hiểu về cách các công ty lớn như Google, Facebook xử lý lượng dữ liệu khổng lồ mỗi ngày không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q18" value="1"> 1</label>
+                <label><input type="radio" name="q18" value="2"> 2</label>
+                <label><input type="radio" name="q18" value="3"> 3</label>
+                <label><input type="radio" name="q18" value="4"> 4</label>
+                <label><input type="radio" name="q18" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">19.</span> Bạn có thấy hứng thú khi đọc về các thuật toán mới, các ngôn ngữ lập trình khác nhau không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q19" value="1"> 1</label>
+                <label><input type="radio" name="q19" value="2"> 2</label>
+                <label><input type="radio" name="q19" value="3"> 3</label>
+                <label><input type="radio" name="q19" value="4"> 4</label>
+                <label><input type="radio" name="q19" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h3>Sáng tạo & Giao tiếp</h3>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">20.</span> Bạn có thích viết lách (truyện, thơ, nhật ký, status “so deep” trên mạng xã hội) và dùng từ ngữ để thể hiện suy nghĩ, cảm xúc của mình không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q20" value="1"> 1</label>
+                <label><input type="radio" name="q20" value="2"> 2</label>
+                <label><input type="radio" name="q20" value="3"> 3</label>
+                <label><input type="radio" name="q20" value="4"> 4</label>
+                <label><input type="radio" name="q20" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">21.</span> Bạn có thích chụp ảnh, quay video clip, vẽ vời, hay dùng các app chỉnh ảnh/video để tạo ra những sản phẩm “chất lừ” không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q21" value="1"> 1</label>
+                <label><input type="radio" name="q21" value="2"> 2</label>
+                <label><input type="radio" name="q21" value="3"> 3</label>
+                <label><input type="radio" name="q21" value="4"> 4</label>
+                <label><input type="radio" name="q21" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">22.</span> Bạn có hay theo dõi tin tức, các “drama” trên mạng, và thích bình luận, chia sẻ quan điểm của mình về các sự kiện đó không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q22" value="1"> 1</label>
+                <label><input type="radio" name="q22" value="2"> 2</label>
+                <label><input type="radio" name="q22" value="3"> 3</label>
+                <label><input type="radio" name="q22" value="4"> 4</label>
+                <label><input type="radio" name="q22" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">23.</span> Bạn có thích lên ý tưởng và tổ chức các sự kiện cho lớp, nhóm bạn (ví dụ: một buổi liên hoan, một chuyến đi chơi, một dự án nhỏ) không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q23" value="1"> 1</label>
+                <label><input type="radio" name="q23" value="2"> 2</label>
+                <label><input type="radio" name="q23" value="3"> 3</label>
+                <label><input type="radio" name="q23" value="4"> 4</label>
+                <label><input type="radio" name="q23" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">24.</span> Bạn có thích được nói chuyện, kết nối với nhiều người, xây dựng mối quan hệ, và làm cho mọi người hiểu nhau hơn không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q24" value="1"> 1</label>
+                <label><input type="radio" name="q24" value="2"> 2</label>
+                <label><input type="radio" name="q24" value="3"> 3</label>
+                <label><input type="radio" name="q24" value="4"> 4</label>
+                <label><input type="radio" name="q24" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">25.</span> Bạn có thích đọc sách, báo, tạp chí để cập nhật thông tin và mở rộng kiến thức về nhiều lĩnh vực không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q25" value="1"> 1</label>
+                <label><input type="radio" name="q25" value="2"> 2</label>
+                <label><input type="radio" name="q25" value="3"> 3</label>
+                <label><input type="radio" name="q25" value="4"> 4</label>
+                <label><input type="radio" name="q25" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">26.</span> Bạn có thích tạo ra các nội dung thú vị (video, bài viết, podcast) để chia sẻ với mọi người trên mạng xã hội không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q26" value="1"> 1</label>
+                <label><input type="radio" name="q26" value="2"> 2</label>
+                <label><input type="radio" name="q26" value="3"> 3</label>
+                <label><input type="radio" name="q26" value="4"> 4</label>
+                <label><input type="radio" name="q26" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">27.</span> Bạn có thích làm MC cho các chương trình của lớp, của trường, hoặc dẫn dắt các buổi thảo luận nhóm không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q27" value="1"> 1</label>
+                <label><input type="radio" name="q27" value="2"> 2</label>
+                <label><input type="radio" name="q27" value="3"> 3</label>
+                <label><input type="radio" name="q27" value="4"> 4</label>
+                <label><input type="radio" name="q27" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h3>Kinh doanh & Đời sống</h3>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">28.</span> Bạn có bao giờ nghĩ đến việc “khởi nghiệp” nhỏ (ví dụ: bán đồ handmade, đồ ăn vặt) hoặc có ý tưởng kinh doanh một sản phẩm/dịch vụ nào đó không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q28" value="1"> 1</label>
+                <label><input type="radio" name="q28" value="2"> 2</label>
+                <label><input type="radio" name="q28" value="3"> 3</label>
+                <label><input type="radio" name="q28" value="4"> 4</label>
+                <label><input type="radio" name="q28" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">29.</span> Khi xem quảng cáo, bạn có hay phân tích xem nó có hay không, có thuyết phục được bạn mua hàng không, và tại sao không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q29" value="1"> 1</label>
+                <label><input type="radio" name="q29" value="2"> 2</label>
+                <label><input type="radio" name="q29" value="3"> 3</label>
+                <label><input type="radio" name="q29" value="4"> 4</label>
+                <label><input type="radio" name="q29" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">30.</span> Bạn có thích tìm hiểu cách các cửa hàng, siêu thị sắp xếp hàng hóa, cách các công ty vận chuyển đồ đạc từ nơi này đến nơi khác một cách nhanh chóng không (logistics)?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q30" value="1"> 1</label>
+                <label><input type="radio" name="q30" value="2"> 2</label>
+                <label><input type="radio" name="q30" value="3"> 3</label>
+                <label><input type="radio" name="q30" value="4"> 4</label>
+                <label><input type="radio" name="q30" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">31.</span> Bạn có hứng thú với việc quản lý tiền bạc cá nhân (tiền tiêu vặt, tiền tiết kiệm), ghi chép thu chi, và làm cho “hầu bao” của mình “khỏe mạnh” không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q31" value="1"> 1</label>
+                <label><input type="radio" name="q31" value="2"> 2</label>
+                <label><input type="radio" name="q31" value="3"> 3</label>
+                <label><input type="radio" name="q31" value="4"> 4</label>
+                <label><input type="radio" name="q31" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">32.</span> Bạn có thích tìm hiểu về các hình thức mua sắm online, các sàn thương mại điện tử (Shopee, Lazada, Tiki) và cách người ta bán hàng trên đó không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q32" value="1"> 1</label>
+                <label><input type="radio" name="q32" value="2"> 2</label>
+                <label><input type="radio" name="q32" value="3"> 3</label>
+                <label><input type="radio" name="q32" value="4"> 4</label>
+                <label><input type="radio" name="q32" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">33.</span> Bạn có quan tâm đến các ứng dụng công nghệ trong ngân hàng (ví dụ: chuyển tiền online, thanh toán QR, ví điện tử) và thấy chúng tiện lợi không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q33" value="1"> 1</label>
+                <label><input type="radio" name="q33" value="2"> 2</label>
+                <label><input type="radio" name="q33" value="3"> 3</label>
+                <label><input type="radio" name="q33" value="4"> 4</label>
+                <label><input type="radio" name="q33" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">34.</span> Bạn có thích tìm hiểu về thị trường chứng khoán, đầu tư, hoặc các cách để “tiền đẻ ra tiền” không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q34" value="1"> 1</label>
+                <label><input type="radio" name="q34" value="2"> 2</label>
+                <label><input type="radio" name="q34" value="3"> 3</label>
+                <label><input type="radio" name="q34" value="4"> 4</label>
+                <label><input type="radio" name="q34" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">35.</span> Bạn có hay để ý đến cách các thương hiệu xây dựng hình ảnh, làm cho mọi người yêu thích và tin dùng sản phẩm của họ không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q35" value="1"> 1</label>
+                <label><input type="radio" name="q35" value="2"> 2</label>
+                <label><input type="radio" name="q35" value="3"> 3</label>
+                <label><input type="radio" name="q35" value="4"> 4</label>
+                <label><input type="radio" name="q35" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">36.</span> Bạn có thích việc phân tích thị trường, tìm hiểu nhu cầu của khách hàng để đưa ra sản phẩm/dịch vụ phù hợp không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q36" value="1"> 1</label>
+                <label><input type="radio" name="q36" value="2"> 2</label>
+                <label><input type="radio" name="q36" value="3"> 3</label>
+                <label><input type="radio" name="q36" value="4"> 4</label>
+                <label><input type="radio" name="q36" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h2>PHẦN B: MÌNH GIỎI GÌ NHỈ? (NĂNG LỰC & KỸ NĂNG)</h2>
+        <p class="intro" style="font-size: 14px;color: #555">Thang điểm: 1 (Rất yếu) - 2 (Yếu) - 3 (Trung bình) - 4 (Khá) - 5 (Giỏi/Rất giỏi)</p>
+        <h3>Tư duy & Học thuật</h3>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">37.</span> Bạn học tốt môn Toán ở mức nào (đặc biệt là phần Đại số, Giải tích, Logic)?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q37" value="1"> 1</label>
+                <label><input type="radio" name="q37" value="2"> 2</label>
+                <label><input type="radio" name="q37" value="3"> 3</label>
+                <label><input type="radio" name="q37" value="4"> 4</label>
+                <label><input type="radio" name="q37" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">38.</span> Bạn học tốt môn Vật Lý ở mức nào (đặc biệt là các phần liên quan đến Điện, Cơ, Quang)?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q38" value="1"> 1</label>
+                <label><input type="radio" name="q38" value="2"> 2</label>
+                <label><input type="radio" name="q38" value="3"> 3</label>
+                <label><input type="radio" name="q38" value="4"> 4</label>
+                <label><input type="radio" name="q38" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">39.</span> Bạn học tốt môn Hóa học ở mức nào (đặc biệt là hiểu về cấu tạo chất, phản ứng)?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q39" value="1"> 1</label>
+                <label><input type="radio" name="q39" value="2"> 2</label>
+                <label><input type="radio" name="q39" value="3"> 3</label>
+                <label><input type="radio" name="q39" value="4"> 4</label>
+                <label><input type="radio" name="q39" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">40.</span> Bạn học tốt môn Tiếng Anh ở mức nào (nghe, nói, đọc, viết, từ vựng chuyên ngành)?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q40" value="1"> 1</label>
+                <label><input type="radio" name="q40" value="2"> 2</label>
+                <label><input type="radio" name="q40" value="3"> 3</label>
+                <label><input type="radio" name="q40" value="4"> 4</label>
+                <label><input type="radio" name="q40" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">41.</span> Bạn học tốt môn Ngữ Văn ở mức nào (khả năng viết, diễn đạt, cảm thụ, phân tích tác phẩm)?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q41" value="1"> 1</label>
+                <label><input type="radio" name="q41" value="2"> 2</label>
+                <label><input type="radio" name="q41" value="3"> 3</label>
+                <label><input type="radio" name="q41" value="4"> 4</label>
+                <label><input type="radio" name="q41" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">42.</span> Nếu trường bạn có dạy môn Tin học (lập trình cơ bản Pascal/Python/C++, thuật toán), bạn học tốt nó ở mức nào?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q42" value="1"> 1</label>
+                <label><input type="radio" name="q42" value="2"> 2</label>
+                <label><input type="radio" name="q42" value="3"> 3</label>
+                <label><input type="radio" name="q42" value="4"> 4</label>
+                <label><input type="radio" name="q42" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">43.</span> Bạn có khả năng tập trung cao độ để giải quyết một bài toán khó hoặc một vấn đề phức tạp trong thời gian dài không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q43" value="1"> 1</label>
+                <label><input type="radio" name="q43" value="2"> 2</label>
+                <label><input type="radio" name="q43" value="3"> 3</label>
+                <label><input type="radio" name="q43" value="4"> 4</label>
+                <label><input type="radio" name="q43" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">44.</span> Bạn có phải là người cẩn thận, tỉ mỉ, hay để ý đến các chi tiết nhỏ khi làm bài hoặc thực hiện một công việc nào đó không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q44" value="1"> 1</label>
+                <label><input type="radio" name="q44" value="2"> 2</label>
+                <label><input type="radio" name="q44" value="3"> 3</label>
+                <label><input type="radio" name="q44" value="4"> 4</label>
+                <label><input type="radio" name="q44" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">45.</span> Bạn có khả năng tự học kiến thức mới một cách nhanh chóng, đặc biệt là các khái niệm kỹ thuật hoặc công nghệ phức tạp không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q45" value="1"> 1</label>
+                <label><input type="radio" name="q45" value="2"> 2</label>
+                <label><input type="radio" name="q45" value="3"> 3</label>
+                <label><input type="radio" name="q45" value="4"> 4</label>
+                <label><input type="radio" name="q45" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">46.</span> Bạn có giỏi trong việc tìm kiếm thông tin trên Internet, chắt lọc và tổng hợp những gì cần thiết không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q46" value="1"> 1</label>
+                <label><input type="radio" name="q46" value="2"> 2</label>
+                <label><input type="radio" name="q46" value="3"> 3</label>
+                <label><input type="radio" name="q46" value="4"> 4</label>
+                <label><input type="radio" name="q46" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">47.</span> Bạn có khả năng suy luận logic, tìm ra mối liên hệ giữa các sự kiện, dữ liệu khác nhau không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q47" value="1"> 1</label>
+                <label><input type="radio" name="q47" value="2"> 2</label>
+                <label><input type="radio" name="q47" value="3"> 3</label>
+                <label><input type="radio" name="q47" value="4"> 4</label>
+                <label><input type="radio" name="q47" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h3>Kỹ năng thực hành & Sáng tạo</h3>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">48.</span> Bạn có nhanh chóng làm quen và sử dụng thành thạo các phần mềm, ứng dụng mới trên máy tính, điện thoại không? (Ví dụ: Microsoft Office, các phần mềm đồ họa cơ bản, các công cụ lập trình).
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q48" value="1"> 1</label>
+                <label><input type="radio" name="q48" value="2"> 2</label>
+                <label><input type="radio" name="q48" value="3"> 3</label>
+                <label><input type="radio" name="q48" value="4"> 4</label>
+                <label><input type="radio" name="q48" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">49.</span> Bạn có “hoa tay” không? (ví dụ: vẽ đẹp, làm đồ thủ công khéo léo, có gu thẩm mỹ tốt về màu sắc, bố cục, thiết kế slide thuyết trình đẹp mắt).
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q49" value="1"> 1</label>
+                <label><input type="radio" name="q49" value="2"> 2</label>
+                <label><input type="radio" name="q49" value="3"> 3</label>
+                <label><input type="radio" name="q49" value="4"> 4</label>
+                <label><input type="radio" name="q49" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">50.</span> Bạn có tự tin khi nói chuyện, trình bày ý kiến của mình trước lớp hoặc một nhóm người không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q50" value="1"> 1</label>
+                <label><input type="radio" name="q50" value="2"> 2</label>
+                <label><input type="radio" name="q50" value="3"> 3</label>
+                <label><input type="radio" name="q50" value="4"> 4</label>
+                <label><input type="radio" name="q50" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">51.</span> Khi làm việc nhóm, bạn có dễ dàng hợp tác, lắng nghe ý kiến và đóng góp hiệu quả vào kết quả chung không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q51" value="1"> 1</label>
+                <label><input type="radio" name="q51" value="2"> 2</label>
+                <label><input type="radio" name="q51" value="3"> 3</label>
+                <label><input type="radio" name="q51" value="4"> 4</label>
+                <label><input type="radio" name="q51" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">52.</span> Bạn có hay nghĩ ra những ý tưởng mới lạ, độc đáo, “không đụng hàng” khi giải quyết một vấn đề hoặc làm một dự án nào đó không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q52" value="1"> 1</label>
+                <label><input type="radio" name="q52" value="2"> 2</label>
+                <label><input type="radio" name="q52" value="3"> 3</label>
+                <label><input type="radio" name="q52" value="4"> 4</label>
+                <label><input type="radio" name="q52" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">53.</span> Bạn có khả năng biến những ý tưởng trừu tượng thành một kế hoạch hoặc sản phẩm cụ thể không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q53" value="1"> 1</label>
+                <label><input type="radio" name="q53" value="2"> 2</label>
+                <label><input type="radio" name="q53" value="3"> 3</label>
+                <label><input type="radio" name="q53" value="4"> 4</label>
+                <label><input type="radio" name="q53" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">54.</span> Bạn có khả năng giải thích những vấn đề phức tạp một cách đơn giản, dễ hiểu cho người khác không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q54" value="1"> 1</label>
+                <label><input type="radio" name="q54" value="2"> 2</label>
+                <label><input type="radio" name="q54" value="3"> 3</label>
+                <label><input type="radio" name="q54" value="4"> 4</label>
+                <label><input type="radio" name="q54" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h3>Kỹ năng liên quan đến Tổ chức & Con người</h3>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">55.</span> Bạn có giỏi trong việc lên kế hoạch (ví dụ: kế hoạch học tập, kế hoạch cho một chuyến đi) và thực hiện theo kế hoạch đó không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q55" value="1"> 1</label>
+                <label><input type="radio" name="q55" value="2"> 2</label>
+                <label><input type="radio" name="q55" value="3"> 3</label>
+                <label><input type="radio" name="q55" value="4"> 4</label>
+                <label><input type="radio" name="q55" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">56.</span> Bạn có khả năng thuyết phục người khác đồng ý với ý kiến của mình hoặc làm theo gợi ý của bạn không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q56" value="1"> 1</label>
+                <label><input type="radio" name="q56" value="2"> 2</label>
+                <label><input type="radio" name="q56" value="3"> 3</label>
+                <label><input type="radio" name="q56" value="4"> 4</label>
+                <label><input type="radio" name="q56" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">57.</span> Bạn có thoải mái khi làm việc với các con số, bảng biểu, tính toán (ví dụ: quản lý quỹ lớp, tính toán chi tiêu, phân tích số liệu thống kê) không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q57" value="1"> 1</label>
+                <label><input type="radio" name="q57" value="2"> 2</label>
+                <label><input type="radio" name="q57" value="3"> 3</label>
+                <label><input type="radio" name="q57" value="4"> 4</label>
+                <label><input type="radio" name="q57" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">58.</span> Bạn có phải là người có trách nhiệm, luôn hoàn thành công việc được giao đúng hạn và đảm bảo chất lượng không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q58" value="1"> 1</label>
+                <label><input type="radio" name="q58" value="2"> 2</label>
+                <label><input type="radio" name="q58" value="3"> 3</label>
+                <label><input type="radio" name="q58" value="4"> 4</label>
+                <label><input type="radio" name="q58" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">59.</span> Bạn có khả năng lãnh đạo, điều phối một nhóm nhỏ để cùng đạt được mục tiêu không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q59" value="1"> 1</label>
+                <label><input type="radio" name="q59" value="2"> 2</label>
+                <label><input type="radio" name="q59" value="3"> 3</label>
+                <label><input type="radio" name="q59" value="4"> 4</label>
+                <label><input type="radio" name="q59" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">60.</span> Bạn có kiên nhẫn khi đối mặt với khó khăn, thử thách và không dễ dàng bỏ cuộc không?
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q60" value="1"> 1</label>
+                <label><input type="radio" name="q60" value="2"> 2</label>
+                <label><input type="radio" name="q60" value="3"> 3</label>
+                <label><input type="radio" name="q60" value="4"> 4</label>
+                <label><input type="radio" name="q60" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h2>PHẦN C: MÌNH MUỐN HỌC VÀ LÀM VIỆC NHƯ THẾ NÀO? (PHONG CÁCH & MÔI TRƯỜNG)</h2>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">61.</span> Về việc học:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q61" value="A"> A. Mình thích học những thứ có thể áp dụng ngay, làm ra sản phẩm cụ thể, thấy được kết quả.</label>
+                <label><input type="radio" name="q61" value="B"> B. Mình thích đào sâu tìm hiểu lý thuyết, nguyên lý gốc rễ của vấn đề.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">62.</span> Về công việc:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q62" value="A"> A. Mình thích công việc có nhiều thử thách, luôn thay đổi, cập nhật cái mới.</label>
+                <label><input type="radio" name="q62" value="B"> B. Mình thích công việc ổn định, có quy trình rõ ràng, ít xáo trộn.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">63.</span> Về cách làm việc:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q63" value="A"> A. Mình thích tự mày mò, làm việc độc lập, tự giải quyết vấn đề.</label>
+                <label><input type="radio" name="q63" value="B"> B. Mình thích làm việc nhóm, cùng mọi người thảo luận, chia sẻ ý tưởng.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">64.</span> Về đối tượng làm việc chính:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q64" value="A"> A. Mình thích làm việc nhiều hơn với máy móc, dữ liệu, thuật toán, logic.</label>
+                <label><input type="radio" name="q64" value="B"> B. Mình thích làm việc nhiều hơn với con người, ý tưởng, giao tiếp, cảm xúc.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">65.</span> Về chất lượng đào tạo:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q65" value="A"> A. Mình sẵn sàng học chương trình “xịn” hơn (Chất lượng cao) dù có thể khó hơn và học phí cao hơn, để có kiến thức và kỹ năng tốt nhất.</label>
+                <label><input type="radio" name="q65" value="B"> B. Mình thấy chương trình đào tạo chuẩn là đủ và phù hợp với mình.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">66.</span> Về yếu tố quốc tế:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q66" value="A"> A. Mình thích môi trường học có yếu tố nước ngoài (ví dụ: học bằng tiếng Anh, có cơ hội giao lưu quốc tế, hoặc chương trình liên kết, Việt-Nhật).</label>
+                <label><input type="radio" name="q66" value="B"> B. Mình thấy thoải mái hơn khi học trong môi trường thuần Việt.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">67.</span> Về định hướng chuyên sâu:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q67" value="A"> A. Mình bị cuốn hút bởi những công nghệ “hot” và mới mẻ như AI, IoT (Vạn vật kết nối), Vi mạch bán dẫn, Thiết kế Game, Chuyển đổi số.</label>
+                <label><input type="radio" name="q67" value="B"> B. Mình thích những ngành nghề có tính nền tảng, ứng dụng rộng rãi và đã được khẳng định.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">68.</span> Về quy mô dự án/công việc:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q68" value="A"> A. Mình thích tham gia vào các dự án lớn, có tầm ảnh hưởng rộng.</label>
+                <label><input type="radio" name="q68" value="B"> B. Mình thích tập trung vào những công việc, nhiệm vụ cụ thể, có thể hoàn thành trong thời gian ngắn hơn.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">69.</span> Về môi trường làm việc lý tưởng:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q69" value="A"> A. Văn phòng hiện đại, công nghệ cao, có nhiều không gian sáng tạo.</label>
+                <label><input type="radio" name="q69" value="B"> B. Môi trường làm việc năng động, thường xuyên đi lại, gặp gỡ nhiều người.</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">70.</span> Về áp lực công việc:
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q70" value="A"> A. Mình có thể làm việc tốt dưới áp lực cao, deadline gấp.</label>
+                <label><input type="radio" name="q70" value="B"> B. Mình thích công việc có nhịp độ vừa phải, cân bằng với cuộc sống.</label>
+            </div>
+        </div>
+
+        <h2>PHẦN D: BẠN MUỐN GÌ Ở CÔNG VIỆC? (KỲ VỌNG NGHỀ NGHIỆP)</h2>
+        <p class="intro" style="font-size: 14px;color: #555">Thang điểm: 1 (Không quan trọng) - 2 (Ít quan trọng) - 3 (Bình thường) - 4 (Quan trọng) - 5 (Rất quan trọng)</p>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">71.</span> Thu nhập cao: Có một mức lương tốt, đủ để sống thoải mái và thực hiện các mục tiêu tài chính.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q71" value="1"> 1</label>
+                <label><input type="radio" name="q71" value="2"> 2</label>
+                <label><input type="radio" name="q71" value="3"> 3</label>
+                <label><input type="radio" name="q71" value="4"> 4</label>
+                <label><input type="radio" name="q71" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">72.</span> Sự ổn định, an toàn: Công việc đảm bảo, ít rủi ro mất việc, có các chế độ phúc lợi tốt.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q72" value="1"> 1</label>
+                <label><input type="radio" name="q72" value="2"> 2</label>
+                <label><input type="radio" name="q72" value="3"> 3</label>
+                <label><input type="radio" name="q72" value="4"> 4</label>
+                <label><input type="radio" name="q72" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">73.</span> Cơ hội thăng tiến: Có lộ trình phát triển rõ ràng, được đề bạt lên các vị trí cao hơn.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q73" value="1"> 1</label>
+                <label><input type="radio" name="q73" value="2"> 2</label>
+                <label><input type="radio" name="q73" value="3"> 3</label>
+                <label><input type="radio" name="q73" value="4"> 4</label>
+                <label><input type="radio" name="q73" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">74.</span> Được học hỏi và phát triển bản thân: Công việc giúp mình có thêm kiến thức, kỹ năng mới liên tục.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q74" value="1"> 1</label>
+                <label><input type="radio" name="q74" value="2"> 2</label>
+                <label><input type="radio" name="q74" value="3"> 3</label>
+                <label><input type="radio" name="q74" value="4"> 4</label>
+                <label><input type="radio" name="q74" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">75.</span> Được công nhận và tôn trọng: Những nỗ lực và đóng góp của mình được ghi nhận.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q75" value="1"> 1</label>
+                <label><input type="radio" name="q75" value="2"> 2</label>
+                <label><input type="radio" name="q75" value="3"> 3</label>
+                <label><input type="radio" name="q75" value="4"> 4</label>
+                <label><input type="radio" name="q75" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">76.</span> Sự sáng tạo và tự chủ: Được tự do đưa ra ý tưởng, quyết định cách thực hiện công việc.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q76" value="1"> 1</label>
+                <label><input type="radio" name="q76" value="2"> 2</label>
+                <label><input type="radio" name="q76" value="3"> 3</label>
+                <label><input type="radio" name="q76" value="4"> 4</label>
+                <label><input type="radio" name="q76" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">77.</span> Môi trường làm việc tích cực: Đồng nghiệp thân thiện, hòa đồng, sếp tâm lý, hỗ trợ.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q77" value="1"> 1</label>
+                <label><input type="radio" name="q77" value="2"> 2</label>
+                <label><input type="radio" name="q77" value="3"> 3</label>
+                <label><input type="radio" name="q77" value="4"> 4</label>
+                <label><input type="radio" name="q77" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">78.</span> Tạo ra giá trị, ý nghĩa: Công việc mang lại lợi ích cho cộng đồng, xã hội hoặc giải quyết một vấn đề nào đó.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q78" value="1"> 1</label>
+                <label><input type="radio" name="q78" value="2"> 2</label>
+                <label><input type="radio" name="q78" value="3"> 3</label>
+                <label><input type="radio" name="q78" value="4"> 4</label>
+                <label><input type="radio" name="q78" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">79.</span> Sự đa dạng và thử thách: Công việc không nhàm chán, luôn có những nhiệm vụ mới mẻ, thú vị.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q79" value="1"> 1</label>
+                <label><input type="radio" name="q79" value="2"> 2</label>
+                <label><input type="radio" name="q79" value="3"> 3</label>
+                <label><input type="radio" name="q79" value="4"> 4</label>
+                <label><input type="radio" name="q79" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">80.</span> Cân bằng công việc – cuộc sống: Có đủ thời gian cho gia đình, bạn bè, sở thích cá nhân.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q80" value="1"> 1</label>
+                <label><input type="radio" name="q80" value="2"> 2</label>
+                <label><input type="radio" name="q80" value="3"> 3</label>
+                <label><input type="radio" name="q80" value="4"> 4</label>
+                <label><input type="radio" name="q80" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">81.</span> Làm việc với công nghệ tiên tiến: Được tiếp xúc và sử dụng những công cụ, kỹ thuật hiện đại nhất.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q81" value="1"> 1</label>
+                <label><input type="radio" name="q81" value="2"> 2</label>
+                <label><input type="radio" name="q81" value="3"> 3</label>
+                <label><input type="radio" name="q81" value="4"> 4</label>
+                <label><input type="radio" name="q81" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">82.</span> Cơ hội làm việc quốc tế: Được đi công tác, làm việc ở nước ngoài hoặc trong các công ty đa quốc gia.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q82" value="1"> 1</label>
+                <label><input type="radio" name="q82" value="2"> 2</label>
+                <label><input type="radio" name="q82" value="3"> 3</label>
+                <label><input type="radio" name="q82" value="4"> 4</label>
+                <label><input type="radio" name="q82" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">83.</span> Giúp đỡ người khác: Công việc cho phép mình trực tiếp hỗ trợ, giải quyết vấn đề cho người khác.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q83" value="1"> 1</label>
+                <label><input type="radio" name="q83" value="2"> 2</label>
+                <label><input type="radio" name="q83" value="3"> 3</label>
+                <label><input type="radio" name="q83" value="4"> 4</label>
+                <label><input type="radio" name="q83" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">84.</span> Địa vị xã hội: Công việc mang lại sự nể trọng, vị thế nhất định trong xã hội.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q84" value="1"> 1</label>
+                <label><input type="radio" name="q84" value="2"> 2</label>
+                <label><input type="radio" name="q84" value="3"> 3</label>
+                <label><input type="radio" name="q84" value="4"> 4</label>
+                <label><input type="radio" name="q84" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">85.</span> Làm việc độc lập: Có thể tự quản lý thời gian, không gian làm việc của mình.
+            </p>
+            <div class="options inline-options">
+                <label><input type="radio" name="q85" value="1"> 1</label>
+                <label><input type="radio" name="q85" value="2"> 2</label>
+                <label><input type="radio" name="q85" value="3"> 3</label>
+                <label><input type="radio" name="q85" value="4"> 4</label>
+                <label><input type="radio" name="q85" value="5"> 5</label>
+            </div>
+        </div>
+
+        <h2>PHẦN E: THÔNG TIN THÊM</h2>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">86.</span> Cơ sở học tập: Bạn ưu tiên học ở cơ sở nào của trường?
+            </p>
+            <div class="options"> <label><input type="radio" name="q86" value="Bac"> Cơ sở chính (Phía Bắc)</label>
+                <label><input type="radio" name="q86" value="Nam"> Cơ sở đào tạo phía Nam (TP.HCM)</label>
+                <label><input type="radio" name="q86" value="KhongQT"> Không quan trọng / Chưa quyết định</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">87.</span> Tổ hợp môn thế mạnh: Nếu phải chọn một tổ hợp để xét tuyển, bạn tự tin nhất với tổ hợp nào sau đây? (Có thể chọn nhiều nếu điểm các môn tương đương)
+            </p>
+            <div class="options"> <label><input type="checkbox" name="q87_tohop_1" value="A00"> A00 (Toán, Lý, Hóa)</label>
+                <label><input type="checkbox" name="q87_tohop_2" value="A01"> A01 (Toán, Lý, Anh)</label>
+                <label><input type="checkbox" name="q87_tohop_3" value="X06"> X06 (Toán, Lý, Tin)</label>
+                <label><input type="checkbox" name="q87_tohop_4" value="X26"> X26 (Toán, Tin, Anh)</label>
+                <label><input type="checkbox" name="q87_tohop_5" value="D01"> D01 (Toán, Văn, Anh)</label>
+                <label><input type="checkbox" name="q87_tohop_6" value="ChuaChac"> Mình chưa chắc chắn</label>
+            </div>
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">88.</span> Ba môn học bạn cảm thấy mình học tốt nhất và có hứng thú nhất ở trường THPT là gì? (Liệt kê theo thứ tự ưu tiên)
+            </p>
+            1. <input type="text" name="q88_1"><br />
+            2. <input type="text" name="q88_2"><br />
+            3. <input type="text" name="q88_3">
+        </div>
+
+        <div class="question-group">
+            <p class="question-text">
+                <span class="question-number">89.</span> Bạn có hình dung cụ thể nào về một công việc/nghề nghiệp mà bạn mơ ước không? (Nếu có, hãy mô tả ngắn gọn)
+            </p>
+            <textarea name="q89" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="submit-button hidden">Xem Kết Quả</button>
+    </form>
+
+    <div id="resultsDisplay" class="hidden"></div>
+</div>
+
+<script>
+    // Dữ liệu "ngành học" (allNganhHoc) và hàm calculateScores, displayResults gốc giữ nguyên
+    const allNganhHoc = [
+        // CƠ SỞ ĐÀO TẠO PHÍA BẮC (BVH)
+        // --- NGÀNH, CHƯƠNG TRÌNH ĐÀO TẠO ĐẠI TRÀ ---
+        {
+            id: '7520207',
+            name: 'Kỹ thuật Điện tử viễn thông',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-ky-thuat-dien-tu-vien-thong/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q1', 'q2', 'q3', 'q6', 'q7', 'q8'], // Physics, tinker, DIY, signals, circuits, sensors
+            relevantQuestionsB: ['q37', 'q38', 'q43', 'q44', 'q45', 'q48'], // Math, Physics, Focus, Meticulous, Self-learn tech, Software
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q74', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7520207_ALoT',
+            name: 'Trí tuệ nhân tạo và vạn vật (ALoT) (ngành KTĐTVT)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-ky-thuat-dien-tu-vien-thong/", // URL chung, nên có link cụ thể hơn
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q2', 'q3', 'q5', 'q8', 'q10', 'q13', 'q18'], // Tinker, DIY, automation, sensors, create PC, AI, big data
+            relevantQuestionsB: ['q37', 'q38', 'q42', 'q43', 'q45', 'q47', 'q48'], // Math, Physics, Prog, Focus, Self-learn, Logic, Software
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q76', 'q79', 'q81'],
+            type: 'ALoT'
+        },
+        {
+            id: '7520216',
+            name: 'Kỹ thuật Điều khiển và Tự động hóa',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-ky-thuat-dieu-khien-va-tu-dong-hoa/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q1', 'q2', 'q3', 'q5', 'q7', 'q8'], // Physics, tinker, DIY, automation, circuits, sensors
+            relevantQuestionsB: ['q37', 'q38', 'q43', 'q44', 'q45', 'q48'], // Math, Physics, Focus, Meticulous, Self-learn tech, Software
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q74', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7510301',
+            name: 'Công nghệ kỹ thuật điện, điện tử',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-cong-nghe-ky-thuat-dien-dien-tu/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q1', 'q2', 'q3', 'q4', 'q7', 'q8'], // Physics, tinker, DIY, chips, circuits, sensors
+            relevantQuestionsB: ['q37', 'q38', 'q39', 'q43', 'q44', 'q45', 'q48'], // Math, Physics, Chem (materials), Focus, Meticulous, Self-learn tech, Software
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q74', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7510301_MBD',
+            name: 'Công nghệ vi mạch bán dẫn (ngành Công nghệ kỹ thuật điện, điện tử)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-cong-nghe-ky-thuat-dien-dien-tu/", // URL chung
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q1', 'q2', 'q4', 'q7', 'q8'], // Physics, tinker, chips, circuits, sensors
+            relevantQuestionsB: ['q37', 'q38', 'q39', 'q43', 'q44', 'q45'], // Math, Physics, Chem, Focus, Meticulous, Self-learn
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q79', 'q81'],
+            type: 'MBD'
+        },
+        {
+            id: '7480201',
+            name: 'Công nghệ thông tin',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-cong-nghe-thong-tin/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q16', 'q19'], // PC tinker, creating, logic puzzles, AI, networks, algorithms
+            relevantQuestionsB: ['q37', 'q42', 'q43', 'q44', 'q45', 'q47', 'q48'], // Math, Prog, Focus, Meticulous, Self-learn, Logic, Software
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7480202',
+            name: 'An toàn thông tin',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-an-toan-thong-tin/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q12', 'q13', 'q16', 'q19'], // Add q12 (security)
+            relevantQuestionsB: ['q37', 'q42', 'q43', 'q44', 'q45', 'q47', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7480107',
+            name: 'Trí tuệ nhân tạo',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-tri-tue-nhan-tao/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q10', 'q11', 'q13', 'q14', 'q18', 'q19'],
+            relevantQuestionsB: ['q37', 'q42', 'q45', 'q47', 'q53'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q70: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q76', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7480101',
+            name: 'Khoa học máy tính (định hướng Khoa học dữ liệu)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-khoa-hoc-may-tinh/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q14', 'q16', 'q18', 'q19'], // Add q14, q18 (data analysis, big data)
+            relevantQuestionsB: ['q37', 'q42', 'q43', 'q44', 'q45', 'q47', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7480102',
+            name: 'Kỹ thuật dữ liệu (ngành Mạng máy tính và truyền thông dữ liệu)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-ky-thuat-du-lieu-nganh-mang-may-tinh-va-truyen-thong-du-lieu/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q14', 'q16', 'q17', 'q18', 'q19'], // Add q14, q17, q18 (data, org data, big data)
+            relevantQuestionsB: ['q37', 'q42', 'q43', 'q44', 'q45', 'q47', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7320101',
+            name: 'Báo chí',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-bao-chi-journalism/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q22', 'q24', 'q25', 'q26', 'q27'], // Writing, visual, news, connect people, reading, content, MC
+            relevantQuestionsB: ['q40', 'q41', 'q46', 'q50', 'q51', 'q52', 'q54'], // Eng, Lit, Info search, Presentation, Teamwork, Creative, Explain
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q69: 'B' },
+            relevantExpectationsD: ['q74', 'q75', 'q77', 'q78', 'q79'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7320106',
+            name: 'Truyền thông đa phương tiện',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-truyen-thong-da-phuong-tien/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q22', 'q25', 'q26', 'q27'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q52', 'q53', 'q54'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q67: 'A', q69: 'B' },
+            relevantExpectationsD: ['q74', 'q75', 'q76', 'q77', 'q78', 'q79'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7329001',
+            name: 'Công nghệ đa phương tiện',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-cong-nghe-da-phuong-tien/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q10', 'q15', 'q21', 'q26'], // Creating with PC, games, visual, content
+            relevantQuestionsB: ['q37', 'q42', 'q48', 'q49', 'q52', 'q53'], // Math, Prog, Software, Design, Creative, Idea to product
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q76', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7340101',
+            name: 'Quản trị kinh doanh',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-quan-tri-kinh-doanh/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q23', 'q24', 'q28', 'q29', 'q35', 'q36'], // Events, connect, startup, ads, branding, market analysis
+            relevantQuestionsB: ['q40', 'q50', 'q51', 'q55', 'q56', 'q58', 'q59'], // Eng, Present, Team, Plan, Persuade, Responsibility, Lead
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q69: 'B' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q75', 'q77', 'q79'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7340101_LOG',
+            name: 'Logistics và quản lý chuỗi cung ứng',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-logistics-va-quan-tri-chuoi-cung-ung/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q23', 'q28', 'q29', 'q30', 'q36'], // Events, startup, ads, logistics, market analysis
+            relevantQuestionsB: ['q37', 'q40', 'q44', 'q51', 'q55', 'q57', 'q58'], // Math, Eng, Meticulous, Team, Plan, Numbers, Responsibility
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'A', q69: 'B' }, // q64:A (data/systems), q69:B (dynamic)
+            relevantExpectationsD: ['q71', 'q72', 'q73', 'q74', 'q79'],
+            type: 'LOG'
+        },
+        {
+            id: '7340120',
+            name: 'Thương mại điện tử',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-thuong-mai-dien-tu/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q10', 'q28', 'q29', 'q32', 'q35', 'q36'], // Create PC, startup, ads, e-commerce, branding, market
+            relevantQuestionsB: ['q40', 'q42', 'q48', 'q50', 'q51', 'q56'], // Eng, Prog (basic), Software, Present, Team, Persuade
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q67: 'A', q69: 'B' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q76', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7340115',
+            name: 'Marketing',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-marketing/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q23', 'q24', 'q26', 'q29', 'q35', 'q36'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q51', 'q52', 'q54', 'q56'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q69: 'B' },
+            relevantExpectationsD: ['q73', 'q74', 'q75', 'q76', 'q77', 'q79'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7340115_QHC',
+            name: 'Quản trị công chúng (ngành Marketing)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-quan-he-cong-chung-nganh-marketing/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q22', 'q23', 'q24', 'q26', 'q27', 'q29', 'q35'], // Add q22 (news/drama), q27 (MC)
+            relevantQuestionsB: ['q40', 'q41', 'q50', 'q51', 'q52', 'q54', 'q56'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q69: 'B' },
+            relevantExpectationsD: ['q73', 'q74', 'q75', 'q77', 'q78', 'q79'],
+            type: 'QHC'
+        },
+        {
+            id: '7340301',
+            name: 'Kế toán',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-ke-toan/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q28', 'q31', 'q34'], // Startup (understand finance), money mgmt, investment
+            relevantQuestionsB: ['q37', 'q40', 'q44', 'q55', 'q57', 'q58'], // Math, Eng, Meticulous, Plan, Numbers, Responsibility
+            relevantChoicesC: { q61: 'B', q62: 'B', q64: 'A', q69: 'A' }, // q61:B (theory), q62:B (stable), q64:A (data), q69:A (office)
+            relevantExpectationsD: ['q71', 'q72', 'q73', 'q75', 'q80'],
+            type: 'DaiTra'
+        },
+        {
+            id: '7340205',
+            name: 'Công nghệ tài chính (Fintech)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-cong-nghe-tai-chinh-fintech/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q10', 'q13', 'q17', 'q28', 'q31', 'q33', 'q34'], // Create PC, AI, data org, startup, money, e-banking, invest
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q44', 'q45', 'q47', 'q48', 'q57'], // Math, Eng, Prog, Meticulous, Self-learn, Logic, Software, Numbers
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q76', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+
+        // --- CHƯƠNG TRÌNH CHẤT LƯỢNG CAO, ĐẶC THÙ ---
+        {
+            id: '7480201_CLC',
+            name: 'Công nghệ thông tin (CLC)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-cong-nghe-thong-tin-he-clc/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q43', 'q44', 'q45', 'q48'], // Add q40 (Eng)
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q65: 'A', q66: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q79', 'q81', 'q82'],
+            type: 'CLC'
+        },
+        {
+            id: '7480202_CLC',
+            name: 'An toàn thông tin (CLC)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-an-toan-thong-tin-chat-luong-cao/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q12', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q43', 'q44', 'q45', 'q47', 'q48'], // Add q40 (Eng)
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q65: 'A', q66: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q79', 'q81', 'q82'],
+            type: 'CLC'
+        },
+        {
+            id: '7340301_CLC',
+            name: 'Kế toán (hướng học để lấy ACCA)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-ke-toan-chat-luong-cao-chuan-quoc-te-acca/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q28', 'q31', 'q34'],
+            relevantQuestionsB: ['q37', 'q40', 'q44', 'q55', 'q57', 'q58'], // Add q40 (Eng)
+            relevantChoicesC: { q61: 'B', q62: 'B', q64: 'A', q65: 'A', q66: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q73', 'q74', 'q75', 'q80', 'q82'],
+            type: 'CLC'
+        },
+        {
+            id: '7320104_CLC', 
+            name: 'Truyền thông đa phương tiện (CLC)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-truyen-thong-da-phuong-tien-clc/", 
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q22', 'q25', 'q26', 'q27'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q52', 'q53', 'q54'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q65: 'A', q66: 'A', q67: 'A', q69: 'B' },
+            relevantExpectationsD: ['q73', 'q74', 'q75', 'q76', 'q77', 'q78', 'q79', 'q82'],
+            type: 'CLC'
+        },
+        {
+            id: '7340115_CLC',
+            name: 'Marketing (CLC)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/nganh-marketing-he-clc/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q23', 'q24', 'q26', 'q29', 'q35', 'q36'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q51', 'q52', 'q54', 'q56'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q65: 'A', q66: 'A', q69: 'B' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q75', 'q76', 'q77', 'q79', 'q82'],
+            type: 'CLC'
+        },
+        {
+            id: '7480204_GAM', 
+            name: 'Thiết kế và phát triển Game (ngành Công nghệ đa phương tiện)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-thiet-ke-va-phat-trien-game/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q10', 'q11', 'q13', 'q15', 'q19', 'q21', 'q26'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q48', 'q49', 'q52', 'q53'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q76', 'q79', 'q81'],
+            type: 'GAM'
+        },
+        {
+            id: '7480201_VNH',
+            name: 'Công nghệ thông tin Việt - Nhật',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-cong-nghe-thong-tin-viet-nhat/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q43', 'q44', 'q45', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q66: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q79', 'q81', 'q82'],
+            type: 'VNH'
+        },
+        {
+            id: '7480201_UDDU',
+            name: 'Công nghệ thông tin (Cử nhân định hướng ứng dụng)',
+            url: "https://daotao.ptit.edu.vn/chuong-trinh-dao-tao/chuong-trinh-cong-nghe-thong-tin-dinh-huong-ung-dung/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q42', 'q43', 'q44', 'q45', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'B', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q74', 'q79', 'q81'],
+            type: 'UDDU'
+        },
+
+        // --- CÁC CHƯƠNG TRÌNH LIÊN KẾT QUỐC TẾ ---
+        {
+            id: '7480201_LK_LTU', 
+            name: 'Công nghệ thông tin (Liên kết với đại học La Trobe, Australia)',
+            url: "https://ptit.edu.vn/chuong-trinh-dao-tao-quoc-te/chuong-trinh-cu-nhan-cong-nghe-thong-tin-cua-dai-hoc-la-trobe-uc/",
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26'], 
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q43', 'q44', 'q45', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q66: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q79', 'q81', 'q82'],
+            type: 'LK'
+        },
+        {
+            id: '7340205_LK_HUD', 
+            name: 'Công nghệ tài chính (Liên kết đại học Huddersfield, Vương Quốc Anh)',
+            url: "https://ptit.edu.vn/chuong-trinh-dao-tao-quoc-te/chuong-trinh-cu-nhan-cong-nghe-tai-chinh-fintech-lien-ket-voi-dai-hoc-huddersfield-vuong-quoc-anh/", 
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'D01'], 
+            relevantQuestionsA: ['q10', 'q13', 'q17', 'q28', 'q31', 'q33', 'q34'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q44', 'q45', 'q47', 'q48', 'q57'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q66: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q76', 'q79', 'q81', 'q82'],
+            type: 'LK'
+        },
+         { 
+            id: '7320104_LK_QUT',
+            name: 'Truyền thông Đa phương tiện (Liên kết đại học Công nghệ Queensland, Úc)',
+            url: "https://tuyensinh.ptit.edu.vn/de-an-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2025/", 
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'], 
+            relevantQuestionsA: ['q20', 'q21', 'q22', 'q25', 'q26', 'q27'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q52', 'q53', 'q54'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q66: 'A', q67: 'A', q69: 'B' },
+            relevantExpectationsD: ['q73', 'q74', 'q75', 'q76', 'q77', 'q78', 'q79', 'q82'],
+            type: 'LK'
+        },
+        {
+            id: '7329001_LK_UC',
+            name: 'Công nghệ Đa phương tiện (Liên kết với đại học Canberra, Australia)',
+            url: "https://tuyensinh.ptit.edu.vn/de-an-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2025/", 
+            coSo: 'Bac',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'], 
+            relevantQuestionsA: ['q10', 'q15', 'q21', 'q26'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q48', 'q49', 'q52', 'q53'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q66: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q76', 'q79', 'q81', 'q82'],
+            type: 'LK'
+        },
+
+        // CƠ SỞ ĐÀO TẠO PHÍA NAM (BVS)
+        // --- NGÀNH, CHƯƠNG TRÌNH ĐÀO TẠO ĐẠI TRÀ ---
+        {
+            id: 'BVS_7520207',
+            name: 'Kỹ thuật Điện tử viễn thông (Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/", 
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q1', 'q2', 'q3', 'q6', 'q7', 'q8'],
+            relevantQuestionsB: ['q37', 'q38', 'q43', 'q44', 'q45', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q74', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7520208',
+            name: 'Công nghệ Internet vạn vật (IoT) (Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q2', 'q3', 'q5', 'q8', 'q10', 'q13', 'q18'],
+            relevantQuestionsB: ['q37', 'q38', 'q42', 'q43', 'q45', 'q47', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q76', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7510301',
+            name: 'Công nghệ Kỹ thuật Điện, điện tử (Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q1', 'q2', 'q3', 'q4', 'q7', 'q8'],
+            relevantQuestionsB: ['q37', 'q38', 'q39', 'q43', 'q44', 'q45', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q74', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7520216',
+            name: 'Kỹ thuật Điều khiển và tự động hóa (Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q1', 'q2', 'q3', 'q5', 'q7', 'q8'],
+            relevantQuestionsB: ['q37', 'q38', 'q43', 'q44', 'q45', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q74', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7480201',
+            name: 'Công nghệ thông tin (Đại trà - Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q42', 'q43', 'q44', 'q45', 'q47', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7480202',
+            name: 'An toàn thông tin (Đại trà - Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q12', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q42', 'q43', 'q44', 'q45', 'q47', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7329001',
+            name: 'Công nghệ đa phương tiện (Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q10', 'q15', 'q21', 'q26'],
+            relevantQuestionsB: ['q37', 'q42', 'q48', 'q49', 'q52', 'q53'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q74', 'q76', 'q79', 'q81'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7320104', 
+            name: 'Truyền thông đa phương tiện (Đại trà - Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q22', 'q25', 'q26', 'q27'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q52', 'q53', 'q54'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q67: 'A', q69: 'B' },
+            relevantExpectationsD: ['q74', 'q75', 'q76', 'q77', 'q78', 'q79'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7340101',
+            name: 'Quản trị kinh doanh (Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q23', 'q24', 'q28', 'q29', 'q35', 'q36'],
+            relevantQuestionsB: ['q40', 'q50', 'q51', 'q55', 'q56', 'q58', 'q59'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q69: 'B' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q75', 'q77', 'q79'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7340115',
+            name: 'Marketing (Đại trà - Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q23', 'q24', 'q26', 'q29', 'q35', 'q36'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q51', 'q52', 'q54', 'q56'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q69: 'B' },
+            relevantExpectationsD: ['q73', 'q74', 'q75', 'q76', 'q77', 'q79'],
+            type: 'DaiTra'
+        },
+        {
+            id: 'BVS_7340301',
+            name: 'Kế toán (Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q28', 'q31', 'q34'],
+            relevantQuestionsB: ['q37', 'q40', 'q44', 'q55', 'q57', 'q58'],
+            relevantChoicesC: { q61: 'B', q62: 'B', q64: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q72', 'q73', 'q75', 'q80'],
+            type: 'DaiTra'
+        },
+
+        // --- CHƯƠNG TRÌNH CHẤT LƯỢNG CAO, ĐẶC THÙ (Cơ sở Nam) ---
+        {
+            id: 'BVS_7480201_CLC',
+            name: 'Công nghệ thông tin (CLC - Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26'],
+            relevantQuestionsA: ['q9', 'q10', 'q11', 'q13', 'q16', 'q19'],
+            relevantQuestionsB: ['q37', 'q40', 'q42', 'q43', 'q44', 'q45', 'q48'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q64: 'A', q65: 'A', q66: 'A', q67: 'A', q69: 'A' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q79', 'q81', 'q82'],
+            type: 'CLC'
+        },
+        {
+            id: 'BVS_7340115_CLC',
+            name: 'Marketing (CLC - Cơ sở Nam)',
+            url: "https://ptithcm.edu.vn/category/tuyen-sinh/dai-hoc-chinh-quy-ptithcm/",
+            coSo: 'Nam',
+            toHop: ['A00', 'A01', 'X06', 'X26', 'D01'],
+            relevantQuestionsA: ['q20', 'q21', 'q23', 'q24', 'q26', 'q29', 'q35', 'q36'],
+            relevantQuestionsB: ['q40', 'q41', 'q49', 'q50', 'q51', 'q52', 'q54', 'q56'],
+            relevantChoicesC: { q61: 'A', q62: 'A', q63: 'B', q64: 'B', q65: 'A', q66: 'A', q69: 'B' },
+            relevantExpectationsD: ['q71', 'q73', 'q74', 'q75', 'q76', 'q77', 'q79', 'q82'],
+            type: 'CLC'
+        }
+    ];
+
+    function calculateScores(answers, nganhHocList) {
+        const scores = [];
+
+        nganhHocList.forEach(nganh => {
+            let currentScore = 0;
+            let matchingReasons = [];
+
+            if (answers.q86 && answers.q86 !== "KhongQT" && answers.q86 !== nganh.coSo) {
+                scores.push({ ...nganh, score: -1000, reasons: ["Không phù hợp cơ sở đã chọn."] });
+                return;
+            }
+
+            nganh.relevantQuestionsA.forEach(qId => {
+                const answerValue = parseInt(answers[qId]);
+                if (!isNaN(answerValue) && answerValue >= 3) {
+                    currentScore += answerValue; 
+                    if (answerValue >= 4) currentScore += (answerValue - 3) * 0.5; 
+                    if (answerValue >= 4) {
+                        matchingReasons.push(`Có hứng thú cao với khía cạnh của câu A${qId.substring(1)}`);
+                    }
+                }
+            });
+
+            nganh.relevantQuestionsB.forEach(qId => {
+                const answerValue = parseInt(answers[qId]);
+                if (!isNaN(answerValue) && answerValue >= 3) {
+                    currentScore += answerValue * 1.2; 
+                    if (answerValue >= 4) currentScore += (answerValue - 3) * 0.6; 
+                    if (answerValue >= 4) {
+                        matchingReasons.push(`Có năng lực tốt ở khía cạnh của câu B${qId.substring(1)}`);
+                    }
+                }
+            });
+
+            if (answers.q88_1 || answers.q88_2 || answers.q88_3) {
+                const strongSubjectsInput = [answers.q88_1, answers.q88_2, answers.q88_3];
+                const strongSubjects = strongSubjectsInput
+                    .filter(s => s && s.trim() !== "")
+                    .map(s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d"));
+
+                let subjectMatchScore = 0;
+                const isKhoiTuNhienNganh = nganh.toHop.some(th => ["A00", "A01", "X06", "X26"].includes(th.toUpperCase()));
+                const isKhoiD01Nganh = nganh.toHop.some(th => "D01" === th.toUpperCase());
+
+                if (isKhoiTuNhienNganh) {
+                    if (strongSubjects.includes("toan")) subjectMatchScore += 6;
+                    if (strongSubjects.includes("ly") || strongSubjects.includes("vat ly")) subjectMatchScore += 6;
+                    if (strongSubjects.includes("tin") || strongSubjects.includes("tin hoc")) subjectMatchScore += 6;
+                    if (strongSubjects.includes("hoa") || strongSubjects.includes("hoa hoc")) subjectMatchScore += 4;
+                     if (strongSubjects.includes("anh") || strongSubjects.includes("tieng anh")) subjectMatchScore += 3;
+                }
+                if (isKhoiD01Nganh) {
+                    if (strongSubjects.includes("toan") && !isKhoiTuNhienNganh) subjectMatchScore += 4;
+                    if (strongSubjects.includes("van") || strongSubjects.includes("ngu van")) subjectMatchScore += 6;
+                    if (strongSubjects.includes("anh") || strongSubjects.includes("tieng anh")) subjectMatchScore += (isKhoiTuNhienNganh && strongSubjects.includes("anh")) ? 3 : 6; 
+                }
+                currentScore += subjectMatchScore;
+                if (subjectMatchScore > 0) {
+                    matchingReasons.push(`Học tốt các môn: ${strongSubjectsInput.filter(s => s && s.trim() !== "").join(", ")}.`);
+                }
+            }
+
+            Object.keys(nganh.relevantChoicesC).forEach(qId => {
+                if (answers[qId] === nganh.relevantChoicesC[qId]) {
+                    currentScore += 6; 
+                    matchingReasons.push(`Phong cách làm việc/học tập (câu C${qId.substring(1)}) phù hợp.`);
+                }
+            });
+
+            if (nganh.type === "CLC" && answers.q65 === "A") {
+                currentScore += 12;
+                matchingReasons.push("Ưu tiên chương trình Chất lượng cao.");
+            }
+            if ((nganh.type === "LK" || nganh.type === "VNH") && answers.q66 === "A") {
+                currentScore += 12;
+                matchingReasons.push("Ưu tiên yếu tố quốc tế.");
+            }
+            if (["ALoT", "MBD", "GAM", "IoT"].includes(nganh.type) && answers.q67 === "A") {
+                 currentScore += 10;
+                 matchingReasons.push("Hứng thú với công nghệ mới/định hướng chuyên sâu đặc thù.");
+            } else if (nganh.type === "DaiTra" && (nganh.id.includes("748") || nganh.id.includes("75")) && answers.q67 === "A") { 
+                 currentScore += 5; 
+                 matchingReasons.push("Hứng thú với công nghệ mới, phù hợp với các ngành kỹ thuật công nghệ.");
+            }
+
+            let expectationMatchCount = 0;
+            let expectationScore = 0;
+            nganh.relevantExpectationsD.forEach(qId => {
+                const answerValue = parseInt(answers[qId]);
+                if (!isNaN(answerValue) && answerValue >= 4) {
+                    expectationScore += (answerValue -3) * 0.75; 
+                    expectationMatchCount++;
+                }
+            });
+            currentScore += expectationScore;
+            if (expectationMatchCount > 0) {
+                matchingReasons.push(`Ngành học đáp ứng ${expectationMatchCount} kỳ vọng quan trọng của bạn.`);
+            }
+
+            if (answers.q87 && Array.isArray(answers.q87) && !answers.q87.includes("ChuaChac") && answers.q87.length > 0) {
+                const userToHop = answers.q87.map(th => th.toUpperCase());
+                const nganhToHopUpper = nganh.toHop.map(th => th.toUpperCase());
+                const nganhCoPhuHopToHop = nganhToHopUpper.some(thNganh => userToHop.includes(thNganh));
+
+                if (nganhCoPhuHopToHop) {
+                    currentScore += 15;
+                    matchingReasons.push("Phù hợp với tổ hợp môn thế mạnh bạn đã chọn.");
+                } else {
+                    currentScore -= 8; 
+                    matchingReasons.push("Ít phù hợp với tổ hợp môn bạn chọn (nếu có).");
+                }
+            } else if (answers.q87 && answers.q87.includes("ChuaChac")) {
+                 matchingReasons.push("Bạn chưa chắc chắn về tổ hợp môn, điểm này không ảnh hưởng.");
+            }
+            scores.push({
+                ...nganh,
+                score: Math.round(currentScore),
+                reasons: [...new Set(matchingReasons)] 
+            });
+        });
+        return scores.sort((a, b) => b.score - a.score);
+    }
+
+    function displayResults(sortedNganh) {
+        const resultsDiv = document.getElementById("resultsDisplay");
+        resultsDiv.innerHTML = `<h2>Kết Quả Định Hướng Nghề Nghiệp</h2>`;
+        const validNganh = sortedNganh.filter(nganh => nganh.score > -1000);
+
+        if (validNganh.length === 0) {
+            resultsDiv.innerHTML += `
+                <p>Rất tiếc, dựa trên các câu trả lời của bạn, chúng tôi chưa tìm thấy gợi ý ngành học nào thực sự nổi bật từ danh sách hiện tại. Điều này có thể do:</p>
+                <ul>
+                    <li>Bạn có những sở thích và năng lực rất đặc biệt, chưa được ánh xạ tốt vào các ngành trong hệ thống.</li>
+                    <li>Lựa chọn cơ sở học tập đã loại trừ các ngành tiềm năng.</li>
+                    <li>Hãy thử lại với các lựa chọn khác hoặc tìm hiểu thêm về các ngành học một cách độc lập.</li>
+                </ul>
+                <p>Bạn cũng có thể chia sẻ kết quả này với giáo viên tư vấn để được hỗ trợ thêm.</p>
+            `;
+        } else {
+            resultsDiv.innerHTML += `<h3>Top Ngành Phù Hợp Nhất:</h3>`;
+            const ulTop = document.createElement("ul");
+            let topCount = 0;
+            const MIN_SCORE_TOP = 25; 
+
+            for (let i = 0; i < validNganh.length && topCount < 5; i++) {
+                const nganh = validNganh[i];
+                if (nganh.score <= 0) {
+                    ulTop.innerHTML = `<p>Chưa có ngành nào thực sự nổi bật với điểm số cao. Hãy xem xét các ngành tiềm năng bên dưới hoặc thử lại.</p>`;
+                    break;
+                }
+                if (nganh.score < MIN_SCORE_TOP) continue; 
+
+                const li = document.createElement("li");
+                const urlDisplay = nganh.url && nganh.url !== "#" ? `<a href="${nganh.url}" target="_blank" title="Xem chi tiết về ngành ${nganh.name}">${nganh.name}</a>` : nganh.name;
+                li.innerHTML = `
+                    <strong>${topCount + 1}. ${urlDisplay} (Mã: ${nganh.id.replace('BVS_', '')})</strong> -
+                    Điểm gợi ý: <strong>${nganh.score}</strong><br>
+                    <em>Cơ sở: ${nganh.coSo === 'Bac' ? 'Phía Bắc' : (nganh.coSo === 'Nam' ? 'Phía Nam' : 'N/A')}</em><br>
+                    <em>Tổ hợp XT: ${nganh.toHop.join(', ')}</em><br>
+                    <small><strong>Lý do phù hợp:</strong> ${nganh.reasons.slice(0, Math.min(4, nganh.reasons.length)).join('. ') + (nganh.reasons.length > 4 ? '...' : '.')}</small>
+                `;
+                ulTop.appendChild(li);
+                topCount++;
+            }
+
+            if (topCount === 0) {
+                 ulTop.innerHTML = `<p>Chưa có ngành nào trong top thực sự nổi bật với điểm số cao (điểm gợi ý >= ${MIN_SCORE_TOP}). Bạn có thể xem xét các ngành tiềm năng khác hoặc thử điều chỉnh lại lựa chọn của mình.</p>`;
+            }
+            resultsDiv.appendChild(ulTop);
+
+            if (validNganh.length > topCount) {
+                resultsDiv.innerHTML += `<h3>Các Ngành Tiềm Năng Khác (cân nhắc thêm):</h3>`;
+                const ulOther = document.createElement("ul");
+                let otherCount = 0;
+                const MIN_SCORE_OTHER = 15; 
+
+                for (let i = topCount; i < validNganh.length && otherCount < 7; i++) {
+                    const nganh = validNganh[i];
+                    if (nganh.score < MIN_SCORE_OTHER) continue;
+
+                    const li = document.createElement("li");
+                    const urlDisplay = nganh.url && nganh.url !== "#" ? `<a href="${nganh.url}" target="_blank" title="Xem chi tiết về ngành ${nganh.name}">${nganh.name}</a>` : nganh.name;
+                    li.innerHTML = `
+                        ${urlDisplay} (Mã: ${nganh.id.replace('BVS_', '')}) - Điểm gợi ý: ${nganh.score}<br>
+                        <small><em>Cơ sở: ${nganh.coSo === 'Bac' ? 'Phía Bắc' : (nganh.coSo === 'Nam' ? 'Phía Nam' : 'N/A')} - Tổ hợp: ${nganh.toHop.join(', ')}</em></small>
+                    `;
+                    if (nganh.reasons.length > 0) {
+                         li.innerHTML += `<br><small><em>Một vài điểm nổi bật: ${nganh.reasons.slice(0,Math.min(2, nganh.reasons.length)).join('. ')}</em></small>`;
+                    }
+                    ulOther.appendChild(li);
+                    otherCount++;
+                }
+                if (otherCount === 0) {
+                     ulOther.innerHTML = `<p>Không có ngành nào khác được gợi ý với điểm số đáng kể (điểm gợi ý >= ${MIN_SCORE_OTHER}).</p>`;
+                }
+                resultsDiv.appendChild(ulOther);
+            }
+        }
+
+        resultsDiv.innerHTML += `
+            <hr>
+            <p><strong>Lưu ý quan trọng:</strong></p>
+            <ul>
+                <li>Kết quả này chỉ mang tính chất <strong>tham khảo</strong>, dựa trên thuật toán và dữ liệu ngành học được cung cấp.</li>
+                <li>"Điểm gợi ý" không phải là điểm thi hay điểm chuẩn, mà là một chỉ số tương đối về mức độ phù hợp dựa trên câu trả lời của bạn.</li>
+                <li>Hãy <strong>tìm hiểu thật kỹ</strong> về chương trình đào tạo, cơ hội việc làm, điểm chuẩn các năm của những ngành bạn quan tâm từ các nguồn thông tin chính thức của PTIT.</li>
+                <li>Quan trọng nhất là <strong>trao đổi với thầy cô, gia đình, và những người có kinh nghiệm</strong> để có được lời khuyên tốt nhất cho lựa chọn tương lai của bạn.</li>
+            </ul>
+            <p>Chúc bạn có những lựa chọn sáng suốt!</p>
+        `;
+        
+        document.getElementById('quiz-view-container').classList.add('hidden');
+        resultsDiv.classList.remove('hidden');
+        resultsDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    // --- NEW QUIZ FLOW LOGIC ---
+    const quizViewContainer = document.getElementById('quiz-view-container');
+    const slideContentArea = document.getElementById('slide-content-area');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const originalForm = document.getElementById('careerTestForm');
+    const resultsDisplay = document.getElementById('resultsDisplay');
+
+    let currentSlideIndex = 0;
+    const slides = [];
+    const userAnswers = {};
+
+    function initializeSlides() {
+        // Add main title and intro
+        slides.push({ type: 'intro', contentElement: originalForm.querySelector('h1').cloneNode(true) });
+        slides.push({ type: 'intro', contentElement: originalForm.querySelector('div.intro').cloneNode(true) });
+
+        const formElements = Array.from(originalForm.children);
+        formElements.forEach(el => {
+            if (el.tagName === 'H2' || el.tagName === 'H3' || (el.classList.contains('intro') && el.previousElementSibling?.tagName === 'H2') ) {
+                slides.push({ type: 'header', contentElement: el.cloneNode(true) });
+            } else if (el.classList.contains('question-group')) {
+                slides.push({ type: 'question', element: el.cloneNode(true) });
+            }
+        });
+    }
+
+    function displaySlide() {
+        const slideData = slides[currentSlideIndex];
+        slideContentArea.innerHTML = ''; // Clear previous content
+        const newContent = slideData.contentElement || slideData.element.cloneNode(true);
+        slideContentArea.appendChild(newContent);
+
+        // Restore answers if they exist
+        if (slideData.type === 'question') {
+            const inputs = newContent.querySelectorAll('input[name], textarea[name]');
+            inputs.forEach(input => {
+                const name = input.name;
+                if (userAnswers[name]) {
+                    if (input.type === 'radio') {
+                        if (input.value === userAnswers[name]) {
+                            input.checked = true;
+                        }
+                    } else if (input.type === 'checkbox') {
+                        const targetKey = name.startsWith("q87_tohop") ? "q87" : name;
+                        if (userAnswers[targetKey] && userAnswers[targetKey].includes(input.value)) {
+                            input.checked = true;
+                        }
+                    } else { // text, textarea
+                         input.value = userAnswers[name];
+                    }
+                }
+                // For q87_tohop (checkboxes), also check general 'q87'
+                if (name.startsWith("q87_tohop") && userAnswers["q87"] && userAnswers["q87"].includes(input.value)) {
+                     input.checked = true;
+                }
+            });
+        }
+
+        // Update progress bar
+        const progressPercentage = ((currentSlideIndex + 1) / slides.length) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+        progressText.textContent = `Tiến độ: ${Math.min(currentSlideIndex + 1, slides.length)} / ${slides.length}`;
+
+        // Update button states
+        prevBtn.disabled = currentSlideIndex === 0;
+        prevBtn.classList.toggle('hidden', currentSlideIndex === 0); 
+        
+        if (currentSlideIndex === slides.length - 1) {
+            nextBtn.textContent = 'Xem Kết Quả';
+        } else if (currentSlideIndex === 0) {
+             nextBtn.textContent = 'Bắt đầu'; 
+        }
+        else {
+            nextBtn.textContent = 'Tiếp Theo';
+        }
+        
+        const currentSlideElement = slideContentArea.firstChild;
+        if (slideData.type === 'question' && currentSlideElement) {
+            const inputs = currentSlideElement.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+            inputs.forEach(input => {
+                input.addEventListener('change', handleInputChange);
+            });
+        }
+    }
+
+    function handleInputChange(event) {
+        collectCurrentAnswer(); // Collect answer immediately
+
+        if (event.target.type === 'radio') {
+            if (!validateCurrentSlide()) { // Validate AFTER collecting
+                const allInputsInSlide = slideContentArea.querySelectorAll('input'); // Re-enable if disabled
+                allInputsInSlide.forEach(inp => inp.disabled = false);
+                return;
+            }
+
+            const allInputsInSlide = slideContentArea.querySelectorAll('input');
+            allInputsInSlide.forEach(inp => inp.disabled = true);
+
+            setTimeout(() => {
+                if (currentSlideIndex < slides.length - 1) {
+                    currentSlideIndex++;
+                    displaySlide();
+                }
+                allInputsInSlide.forEach(inp => inp.disabled = false);
+            }, 250); // Short delay
+        }
+        // For checkboxes, no auto-advance, validation happens on "Next" click.
+    }
+    
+    function collectCurrentAnswer() {
+        const slideData = slides[currentSlideIndex];
+        if (slideData.type === 'question') {
+            const questionElement = slideContentArea.firstChild; 
+            if (!questionElement) return; // Should not happen
+            
+            const inputs = questionElement.querySelectorAll('input[name], textarea[name]');
+            
+            inputs.forEach(input => {
+                const name = input.name;
+                if (input.type === 'radio') {
+                    if (input.checked) {
+                        userAnswers[name] = input.value;
+                    }
+                } else if (input.type === 'checkbox') {
+                    const targetKey = name.startsWith("q87_tohop") ? "q87" : name;
+                    if (!userAnswers[targetKey] || !Array.isArray(userAnswers[targetKey])) {
+                         userAnswers[targetKey] = [];
+                    }
+
+                    if (input.checked) {
+                        if (!userAnswers[targetKey].includes(input.value)) {
+                            userAnswers[targetKey].push(input.value);
+                        }
+                    } else {
+                        const index = userAnswers[targetKey].indexOf(input.value);
+                        if (index > -1) {
+                            userAnswers[targetKey].splice(index, 1);
+                        }
+                    }
+                } else { 
+                    userAnswers[name] = input.value;
+                }
+            });
+        }
+    }
+
+    function validateCurrentSlide() {
+        const slideData = slides[currentSlideIndex];
+        if (slideData.type !== 'question') return true; // Intro/header slides are always valid
+
+        const questionElementOriginal = slideData.element; // Use the original element to get the question's name structure
+        const firstInput = questionElementOriginal.querySelector('input[name], textarea[name]');
+        if (!firstInput) return true; // No input elements, e.g., just text
+
+        const questionName = firstInput.name;
+
+        // Q88 and Q89 are optional for navigation
+        if (questionName.startsWith('q88_') || questionName === 'q89') {
+            return true;
+        }
+
+        // For radio button questions (q1 to q86, excluding q87, q88, q89)
+        if (firstInput.type === 'radio') {
+            if (!userAnswers[questionName]) {
+                alert("Vui lòng trả lời câu hỏi này để tiếp tục.");
+                return false;
+            }
+        }
+        // For Q87 (checkboxes)
+        else if (questionName.startsWith('q87_tohop')) {
+            if (!userAnswers['q87'] || userAnswers['q87'].length === 0) {
+                alert("Vui lòng chọn ít nhất một tổ hợp môn hoặc 'Chưa chắc chắn' để tiếp tục.");
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    function processAndShowResults() {
+        collectCurrentAnswer(); // Ensure the very last answer is collected
+
+        let allRequiredAnswered = true;
+        const requiredRadioGroups = new Set();
+        // Identify all unique radio question names from q1-q86 (excluding q87 which is checkbox)
+        for (let i = 1; i <= 86; i++) {
+            const qName = 'q' + i;
+            const qSlide = slides.find(s => s.type === 'question' && s.element.querySelector(`input[name="${qName}"]`));
+            if(qSlide && qSlide.element.querySelector(`input[type="radio"][name="${qName}"]`)) {
+                requiredRadioGroups.add(qName);
+            }
+        }
+        
+        requiredRadioGroups.forEach(groupName => {
+            if (!userAnswers[groupName]) {
+                allRequiredAnswered = false;
+                console.warn(`Câu hỏi trắc nghiệm ${groupName} chưa được trả lời (cần cho tính điểm).`);
+            }
+        });
+        
+        // Specific check for q87 (checkbox group)
+        if (!userAnswers['q87'] || userAnswers['q87'].length === 0) {
+            allRequiredAnswered = false;
+             console.warn(`Câu hỏi q87 (tổ hợp môn) chưa được trả lời (cần cho tính điểm).`);
+        }
+
+        if (!allRequiredAnswered) {
+             alert("Vui lòng trả lời tất cả các câu hỏi trắc nghiệm bắt buộc (từ Phần A đến câu 87 ở Phần E) trước khi xem kết quả. Q88 và Q89 là tùy chọn.");
+             return;
+        }
+
+        console.log("Dữ liệu cuối cùng:", userAnswers);
+        const sortedResults = calculateScores(userAnswers, allNganhHoc);
+        console.log("Kết quả đã sắp xếp:", sortedResults);
+        displayResults(sortedResults);
+    }
+
+    nextBtn.addEventListener('click', () => {
+        // For "Bắt đầu" (index 0) or non-question slides, no validation needed to proceed
+        if (currentSlideIndex > 0 && slides[currentSlideIndex].type === 'question') {
+            collectCurrentAnswer(); // Collect first
+            if (!validateCurrentSlide()) { // Then validate
+                return;
+            }
+        } else {
+             collectCurrentAnswer(); // Still collect if it's Q88/Q89 text input, though validation passes
+        }
+
+        if (currentSlideIndex < slides.length - 1) {
+            currentSlideIndex++;
+            displaySlide();
+        } else {
+            processAndShowResults();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentSlideIndex > 0) {
+            collectCurrentAnswer(); 
+            currentSlideIndex--;
+            displaySlide();
+        }
+    });
+
+    // Initialize
+    initializeSlides();
+    displaySlide(); 
+    quizViewContainer.classList.remove('hidden'); 
+    resultsDisplay.classList.add('hidden');
+
+    originalForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+    });
+</script>
