@@ -1,0 +1,5 @@
+{
+  "name": "Mini Profile App",
+  "description": "A simple shop backend with session-based login, cookie-based theme selection, and profile tracking.",
+  "requestFramePermissions": []
+}
